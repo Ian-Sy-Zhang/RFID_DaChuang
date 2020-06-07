@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rfid.data.dataAdmin.TransportMapper">
+
+    <insert id="addTransInfo">
+        insert into transport (TransportId, CAS_id, batchId, Num, State)
+        values (#{transportVO.TransportId},#{transportVO.CAS_id},#{transportVO.batchId},#{transportVO.Num},#{transportVO.State})
+    </insert>
+</mapper>

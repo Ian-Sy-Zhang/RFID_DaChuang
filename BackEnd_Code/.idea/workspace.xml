@@ -20,31 +20,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82b0d64a-7bc3-42b1-b7e4-81cc227a3059" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/RFID_DaChuang.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/RFIDApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAnalysis/RFIDService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAnalysis/RFIDServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/config/CommonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/config/InterceptorConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/rfidController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/data/dataAnalysis/RFIDMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/interceptor/SessionInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/po/transportPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/transportVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dataImpl/dataAnalysis/RFIDMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAdmin/BatchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAdmin/ChemsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAdmin/EquipmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAdmin/SpotService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAdmin/TransportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAdmin/BatchServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAdmin/ChemsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAdmin/EquipmentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAdmin/SpotServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAdmin/TransportServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/dataAdmin/TransportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/dataAnalysis/RFIDController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/data/dataAdmin/BatchMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/data/dataAdmin/ChemsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/data/dataAdmin/SpotMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/data/dataAdmin/TransportMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/BatchVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/ChemcasVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/DangerousBatchVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/DangerousChems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/EquipmentVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/ResponseVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/SpotVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dataImpl/dataAdmin/BatchMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dataImpl/dataAdmin/ChemsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dataImpl/dataAdmin/SpotMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dataImpl/dataAdmin/TransportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/rfid/blImpl/dataAnalysis/RFIDServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/rfid/data/dataAnalysis/RFIDMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAnalysis/RFIDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/dataAnalysis/RFIDService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAnalysis/RFIDServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/dataAnalysis/RFIDServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/rfidController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/data/dataAnalysis/RFIDMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/data/dataAnalysis/RFIDMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/po/transportPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/po/TransportPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/transportVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/TransportVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dataImpl/dataAnalysis/RFIDMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dataImpl/dataAnalysis/RFIDMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Log/~$200526-项目基本开发信息.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +71,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -85,25 +103,106 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590496578807" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/rfid/interceptor" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/example/rfid/data/dataAnalysis/RFIDMapperTest.java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/test/java/com/example/rfid/data/dataAnalysis/RFIDMapperTest.java" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/data" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.rfid.blImpl.dataAnalysis" />
+      <recent name="com.example.rfid.data.dataAnalysis" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.rfid.vo" />
       <recent name="com.example.rfid.interceptor" />
       <recent name="com.example.rfid" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ian\Documents\GitHub\RFID_DaChuang\BackEnd_Code\src\main\java\com\example\rfid\interceptor" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RFIDApplication">
+    <configuration name="RFIDMapperTest.addTransInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd_Code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.rfid.data.dataAnalysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.rfid.data.dataAnalysis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.rfid.data.dataAnalysis.RFIDMapperTest" />
+      <option name="METHOD_NAME" value="addTransInfo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RFIDMapperTest.mostDangerousBatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd_Code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.rfid.data.dataAnalysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.rfid.data.dataAnalysis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.rfid.data.dataAnalysis.RFIDMapperTest" />
+      <option name="METHOD_NAME" value="mostDangerousBatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RFIDMapperTest.mostDangerousChem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd_Code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.rfid.data.dataAnalysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.rfid.data.dataAnalysis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.rfid.data.dataAnalysis.RFIDMapperTest" />
+      <option name="METHOD_NAME" value="mostDangerousChem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RFIDServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd_Code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.rfid.blImpl.dataAnalysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.rfid.blImpl.dataAnalysis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.rfid.blImpl.dataAnalysis.RFIDServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GoldenWindApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BackEnd_Code" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.goldenwind.GoldenWindApplication" />
@@ -111,6 +210,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RFIDApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="BackEnd_Code" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.rfid.RFIDApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RFIDServiceImplTest" />
+        <item itemvalue="JUnit.RFIDMapperTest.mostDangerousChem" />
+        <item itemvalue="JUnit.RFIDMapperTest.mostDangerousBatch" />
+        <item itemvalue="JUnit.RFIDMapperTest.addTransInfo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -124,7 +238,11 @@
       <updated>1590494113179</updated>
       <workItem from="1590494114887" duration="310000" />
       <workItem from="1590496530888" duration="48000" />
-      <workItem from="1590935005917" duration="2981000" />
+      <workItem from="1590935005917" duration="3008000" />
+      <workItem from="1590994671430" duration="13000" />
+      <workItem from="1591426618533" duration="6571000" />
+      <workItem from="1591455329612" duration="2000000" />
+      <workItem from="1591496689919" duration="4623000" />
     </task>
     <servers />
   </component>
@@ -141,6 +259,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -154,33 +273,65 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="766" y="228" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1590935387421" />
-    <state x="487" y="113" width="1372" height="912" key="DiffContextDialog" timestamp="1590935387961">
+    <state x="1342" y="262" key="#com.intellij.ide.util.MemberChooser" timestamp="1591499107412">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="487" y="113" width="1372" height="912" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1590935387961" />
-    <state x="901" y="320" key="FileChooserDialogImpl" timestamp="1590935147651">
+    <state x="1342" y="262" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1591499107412" />
+    <state x="487" y="113" width="1372" height="912" key="DiffContextDialog" timestamp="1591454569311">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="901" y="320" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1590935147651" />
+    <state x="487" y="113" width="1372" height="912" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1591454569311" />
+    <state x="901" y="320" key="FileChooserDialogImpl" timestamp="1591499888337">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="901" y="320" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1591499888337" />
+    <state width="1114" height="364" key="GridCell.Tab.0.bottom" timestamp="1591501165599">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1114" height="364" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1591501165599" />
+    <state width="1114" height="364" key="GridCell.Tab.0.center" timestamp="1591501165599">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1114" height="364" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1591501165599" />
+    <state width="1114" height="364" key="GridCell.Tab.0.left" timestamp="1591501165599">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1114" height="364" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1591501165599" />
+    <state width="1114" height="364" key="GridCell.Tab.0.right" timestamp="1591501165599">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1114" height="364" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1591501165599" />
     <state x="945" y="214" key="Maven.ArtifactSearchDialog" timestamp="1590936036505">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="945" y="214" key="Maven.ArtifactSearchDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1590936036505" />
-    <state x="622" y="210" key="SettingsEditor" timestamp="1590935034054">
+    <state x="622" y="210" key="SettingsEditor" timestamp="1591453809370">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="622" y="210" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1590935034054" />
+    <state x="622" y="210" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1591453809370" />
     <state x="1415" y="446" width="334" height="248" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1590937655490">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1415" y="446" width="334" height="248" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.2048.1112@0.0.2048.1112" timestamp="1590937655490" />
-    <state x="1343" y="142" width="464" height="523" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1590937697861">
+    <state x="1248" y="374" width="439" height="366" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1591498751719">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1343" y="142" width="464" height="523" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1590937697861" />
-    <state x="1114" y="291" width="600" height="536" key="find.popup" timestamp="1590936055383">
+    <state x="1248" y="374" width="439" height="366" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1591498751719" />
+    <state x="1343" y="142" width="464" height="523" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1591500712180">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1114" y="291" width="600" height="536" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1590936055383" />
+    <state x="1343" y="142" width="464" height="523" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1591500712180" />
+    <state x="1280" y="360" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591501043276">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1280" y="360" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1591501043276" />
+    <state x="1114" y="291" width="600" height="536" key="find.popup" timestamp="1591455649097">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1114" y="291" width="600" height="536" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1591455649097" />
+    <state x="1199" y="242" key="search.everywhere.popup" timestamp="1591454611481">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1199" y="242" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1591454611481" />
   </component>
 </project>

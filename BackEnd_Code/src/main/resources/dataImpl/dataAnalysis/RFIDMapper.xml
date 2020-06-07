@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.rfid.data.dataAnalysis.AuthorMapper">
+<mapper namespace="com.example.rfid.data.dataAnalysis.RFIDMapper">
+
+    <select id="mostDangerousBatch" resultType="com.example.rfid.vo.DangerousBatchVO">
+        select T.batchId as batchId, count(*) as DangerousTimes
+        from transport T where T.State = 1
+        group by T.batchId
+    </select>
 
 
+    <select id="mostDangerousChem" resultType="com.example.rfid.vo.ChemcasVO">
+        select T.CAS_id as CAS_id, count(*) as DangerousTimes
+        from transport T where T.State = 1
+        group by T.CAS_id
+    </select>
 </mapper>
