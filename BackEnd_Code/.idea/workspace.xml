@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82b0d64a-7bc3-42b1-b7e4-81cc227a3059" name="Default Changelist" comment="开发" />
+    <list default="true" id="82b0d64a-7bc3-42b1-b7e4-81cc227a3059" name="Default Changelist" comment="开发">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +68,8 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590496578807" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/example/rfid/data/dataAnalysis/RFIDMapperTest.java" />
+    <property name="database.data.extractors.current.id" value="SQL Inserts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sql" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -203,7 +206,7 @@
       <workItem from="1590994671430" duration="13000" />
       <workItem from="1591426618533" duration="6571000" />
       <workItem from="1591455329612" duration="2000000" />
-      <workItem from="1591496689919" duration="4928000" />
+      <workItem from="1591496689919" duration="5477000" />
     </task>
     <task id="LOCAL-00001" summary="开发">
       <created>1591501582017</created>
@@ -252,10 +255,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="487" y="113" width="1372" height="912" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1591454569311" />
-    <state x="901" y="320" key="FileChooserDialogImpl" timestamp="1591499888337">
+    <state x="901" y="320" key="FileChooserDialogImpl" timestamp="1591501733217">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="901" y="320" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1591499888337" />
+    <state x="901" y="320" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1591501733217" />
     <state width="731" height="771" key="GridCell.Tab.0.bottom" timestamp="1591501559636">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
