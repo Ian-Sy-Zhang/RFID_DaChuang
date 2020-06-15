@@ -43,8 +43,8 @@ const routes = [
           nav: '设备编辑',
           activeItem: '3-1'
         }
-      }
-      // ,{
+      },
+      // {
       //   path: 'device/type',
       //   component: () => import('../views/device/devType/List.vue'),
       //   name: 'DevTypeList',
@@ -53,15 +53,15 @@ const routes = [
       //     activeItem: '3-2'
       //   }
       // },
-      // {
-      //   path: 'device/arg',
-      //   name: 'DevArgList',
-      //   component: () => import('../views/device/devArg/List.vue'),
-      //   meta: {
-      //     nav: '设备参数',
-      //     activeItem: '3-3'
-      //   }
-      // }
+      {
+        path: 'device/arg',
+        name: 'DevArgList',
+        component: () => import('../views/device/devArg/List.vue'),
+        meta: {
+          nav: '设备参数',
+          activeItem: '3-3'
+        }
+      }
 
     ]
   }
