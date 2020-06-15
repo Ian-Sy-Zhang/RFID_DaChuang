@@ -35,16 +35,16 @@ const routes = [
           nav: '设备列表',
           activeItem: '3-1'
         }
+      }, {
+        path: 'device/edit/:devId?',
+        component: () => import('../views/device/device/Edit.vue'),
+        name: 'DeviceEdit',
+        meta: {
+          nav: '设备编辑',
+          activeItem: '3-1'
+        }
       }
       // ,{
-      //   path: 'device/edit/:devId?',
-      //   component: () => import('../views/device/device/Edit.vue'),
-      //   name: 'DeviceEdit',
-      //   meta: {
-      //     nav: '设备编辑',
-      //     activeItem: '3-1'
-      //   }
-      // }, {
       //   path: 'device/type',
       //   component: () => import('../views/device/devType/List.vue'),
       //   name: 'DevTypeList',

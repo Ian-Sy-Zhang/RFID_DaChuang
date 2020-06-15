@@ -1,9 +1,9 @@
 <template>
   <el-container style="height: 100%; border: 1px solid #eee">
     <el-header style="text-align: right; font-size: 12px">
-      <el-dropdown @command="clickItem">
+      <el-dropdown>
         <span class="el-dropdown-link">
-          <i class="iconfont icon-user-info" style="margin-right: 8px;color: #fff;"></i>{{userInfo.name}}
+          <i class="el-icon-user" @click="gotoUser" style="margin-right: 8px;color: #fff;"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="0">用户信息</el-dropdown-item>
@@ -55,18 +55,20 @@ export default {
   name: 'Main',
   data () {
     return {
+      currentNav: '',
       userInfo: {},
       centerDialogVisible: false,
       defaultActive: ''
     }
   },
   methods: {
+    gotoUser () {
 
+    }
   },
   computed: {
   },
   mounted () {
-    this.userInfo = this.user.userInfo
     this.currentNav = this.$route.meta.nav
     this.defaultActive = this.$route.meta.activeItem
   }
