@@ -1,6 +1,7 @@
 package com.example.rfid.bl.RuleEngine;
 
-import com.example.rfid.vo.People;
+
+import com.example.rfid.RFIDApplication;
 import com.example.rfid.vo.TransportInfoVO;
 import org.junit.After;
 import org.junit.Before;
@@ -9,14 +10,14 @@ import org.junit.runner.RunWith;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootTest
-@RunWith(SpringRunner.class)
-public class RuleEngineTest {
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = RFIDApplication.class)
+public class RuleEngineTest2 {
 
     @Autowired
     private RuleEngine ruleEngine;

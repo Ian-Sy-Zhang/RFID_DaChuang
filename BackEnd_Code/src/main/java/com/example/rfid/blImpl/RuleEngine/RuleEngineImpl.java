@@ -3,7 +3,6 @@ package com.example.rfid.blImpl.RuleEngine;
 import com.example.rfid.bl.RuleEngine.RuleEngine;
 import com.example.rfid.bl.dataAdmin.EquipmentService;
 import com.example.rfid.bl.dataAdmin.TransportService;
-import com.example.rfid.vo.People;
 import com.example.rfid.vo.Rule;
 import com.example.rfid.vo.TransportInfoVO;
 import org.kie.api.KieBase;
