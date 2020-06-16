@@ -1,6 +1,6 @@
 use rfid;
 
-create table chemCAS if not exists
+create table chemCAS
 (
 	CAS_id int not null,
 	Name varchar(45) null,
@@ -16,17 +16,17 @@ create table chemCAS if not exists
 		primary key (CAS_id)
 );
 
-create table spot if not exists
+create table spot
 (
 	SpotId int not null,
 	SpotName varchar(45) null,
 	SpotX int null,
 	SpotY int null,
 	constraint spot_pk
-		primary key (SpoitId)
+		primary key (SpotId)
 );
 
-create table batch if not exists
+create table batch
 (
 	batchId int not null,
 	batchName varchar(45) null,
@@ -36,7 +36,7 @@ create table batch if not exists
 		primary key (batchId)
 );
 
-create table transport if not exists
+create table transport
 (
 	TransportId int not null,
 	CAS_id int null,
