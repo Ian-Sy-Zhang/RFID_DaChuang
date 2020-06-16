@@ -16,8 +16,7 @@ import java.io.IOException;
 
 @Configuration
 public class KiaSessionConfig {
-
-    private static final String RULES_PATH = "rules/start/";
+    private static final String RULES_PATH = "rules/";
 
     @Bean
     public KieFileSystem kieFileSystem() throws IOException {
@@ -32,6 +31,7 @@ public class KiaSessionConfig {
 
         ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
         final Resource[] resources = resourcePatternResolver.getResources("classpath*:" + RULES_PATH + "**/*.*");
+        System.out.print(resources.length);
         return resources;
 
     }

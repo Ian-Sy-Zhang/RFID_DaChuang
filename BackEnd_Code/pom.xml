@@ -236,6 +236,7 @@
                     <include>**/*.xml</include>
                     <include>static/**</include>
                     <include>templates/**</include>
+                    <include>**/*.drl</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

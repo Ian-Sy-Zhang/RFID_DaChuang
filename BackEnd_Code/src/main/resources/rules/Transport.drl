@@ -6,7 +6,7 @@ dialect  "java"
 
 rule "Transport"
    when
-       $p : TransportInfoVO(1)
+       $p : TransportInfoVO(name == "123")
    then
        System.out.println("654");
 end
