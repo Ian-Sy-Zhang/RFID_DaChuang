@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/dataAnalysis")
 public class RFIDController {
+
     @Autowired
     RFIDService rfidService;
 
