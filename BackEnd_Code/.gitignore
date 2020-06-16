@@ -1,5 +1,6 @@
-.idea/
+.idea
 .DS_Store
 nohup.out
 target
 goldenwind.iml
+src\main\resources\application.yml

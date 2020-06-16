@@ -18,7 +18,7 @@ create table chemCAS if not exists
 
 create table spot if not exists
 (
-	SpoitId int not null,
+	SpotId int not null,
 	SpotName varchar(45) null,
 	SpotX int null,
 	SpotY int null,
@@ -46,6 +46,21 @@ create table transport if not exists
 	constraint transport_pk
 		primary key (TransportId)
 );
+
+
+create table equipment
+(
+	id int not null,
+	name varchar(45) null,
+	ip varchar(45) null,
+	abs varchar(45) null,
+	status varchar(45) null,
+	connectionType varchar(45) null,
+	constraint equipment_pk
+		primary key (id)
+);
+
+
 
 
 
