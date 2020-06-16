@@ -36,15 +36,6 @@
 </template>
 
 <script>
-// import {
-//   getDeviceDetail,
-//   updateDeviceInfo,
-//   addDevice
-// } from '../../http/device'
-// import { getDevTypeList } from '../../http/devType'
-// import { getDevArgList } from '../../http/devArg'
-// import { getUserList } from '../../http/user'
-// import { mapState } from 'vuex'
 export default {
   name: 'DeviceEdit',
   mounted () {
@@ -80,8 +71,6 @@ export default {
   },
   data () {
     return {
-      users: [],
-      devTypes: [],
       labelPosition: 'right',
       device: {
         args: [{}],
@@ -107,58 +96,8 @@ export default {
     back () {
       this.$router.back()
     },
-    // handleAvatarSuccess (res, file) {
-    //   this.device.pic = '/' + res.url
-    //   // this.imageUrl = URL.createObjectURL(file.raw);
-    // },
-    // beforeAvatarUpload (file) {
-    //   const isJPG = file.type === 'image/jpeg'
-    //   const isLt2M = file.size / 1024 / 1024 < 2
-    //
-    //   if (!isJPG) {
-    //     this.$message.error('上传头像图片只能是 JPG 格式!')
-    //   }
-    //   if (!isLt2M) {
-    //     this.$message.error('上传头像图片大小不能超过 2MB!')
-    //   }
-    //   return isJPG && isLt2M
-    // },
-    // saveDeviceInfo (formName) {
-    //   this.$refs[formName].validate(valid => {
-    //     if (valid) {
-    //       this.device.code += ''
-    //       if (this.device.id) {
-    //         // 修改保存
-    //         updateDeviceInfo(this.device)
-    //           .then(res => {
-    //             this.$router.back()
-    //           })
-    //           .catch(err => {
-    //             console.log(err)
-    //             this.$message.error(err.message)
-    //           })
-    //       } else {
-    //         // 新增保存
-    //         addDevice(this.device)
-    //           .then(res => {
-    //             this.$message({
-    //               type: 'success',
-    //               message: '新增成功!'
-    //             })
-    //             this.$router.back()
-    //           })
-    //           .catch(err => {
-    //             this.$message.error(err.message)
-    //           })
-    //       }
-    //     }
-    //   })
-    // },
-    removeDevArg (devArg, index) {
-      this.device.args.splice(index, 1)
-    },
-    addDevArg () {
-      this.device.args.push({})
+    saveDeviceInfo (device) {
+      console.log(this.device)
     },
     clearForm (form) {
       this.device.args = this.device.args.map(item => {
