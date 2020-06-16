@@ -3,12 +3,8 @@
     <el-header style="text-align: right; font-size: 12px">
       <el-dropdown>
         <span class="el-dropdown-link">
-          <i class="el-icon-user" @click="gotoUser" style="margin-right: 8px;color: #fff;"></i>
+          <i class="el-icon-user" style="margin-right: 8px;color: #fff;"></i>
         </span>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="0">用户信息</el-dropdown-item>
-          <el-dropdown-item command="1">退出登录</el-dropdown-item>
-        </el-dropdown-menu>
       </el-dropdown>
     </el-header>
     <el-container>
@@ -19,16 +15,10 @@
               <i class="iconfont icon-setting"></i>系统设置</template>
             <el-menu-item index="1-1" route="/main/user">用户管理</el-menu-item>
           </el-submenu>
-          <!-- <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-message"></i>文章管理</template>
-            <el-menu-item index="ArtileList" route="/main/article">文章列表</el-menu-item>
-          </el-submenu> -->
           <el-submenu index="3">
             <template slot="title">
               <i class="iconfont icon-equipment-set"></i>设备管理</template>
             <el-menu-item index="3-1" route="/main/device">设备列表</el-menu-item>
-            <el-menu-item index="3-2" route="/main/device/type">设备类别</el-menu-item>
             <el-menu-item index="3-3" route="/main/device/arg">设备参数</el-menu-item>
           </el-submenu>
         </el-menu>
@@ -62,15 +52,13 @@ export default {
     }
   },
   methods: {
-    gotoUser () {
-
-    }
   },
   computed: {
   },
   mounted () {
     this.currentNav = this.$route.meta.nav
     this.defaultActive = this.$route.meta.activeItem
+    console.log(this.currentNav)
   }
 }
 </script>

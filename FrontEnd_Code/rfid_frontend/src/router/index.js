@@ -22,7 +22,7 @@ const routes = [
     path: '/main',
     name: '',
     meta: {
-      nav: '用户管理',
+      nav: '',
       activeItem: '1-1'
     },
     component: () => import('../views/Main'),
@@ -44,15 +44,6 @@ const routes = [
           activeItem: '3-1'
         }
       },
-      // {
-      //   path: 'device/type',
-      //   component: () => import('../views/device/devType/List.vue'),
-      //   name: 'DevTypeList',
-      //   meta: {
-      //     nav: '设备类别',
-      //     activeItem: '3-2'
-      //   }
-      // },
       {
         path: 'device/arg',
         name: 'DevArgList',

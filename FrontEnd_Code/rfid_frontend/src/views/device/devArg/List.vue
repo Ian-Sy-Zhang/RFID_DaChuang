@@ -1,13 +1,6 @@
 <template>
   <div class="search">
-    <el-form :inline="true" :model="formInline" class="form-inline">
-      <el-form-item label="设备参数名">
-        <el-input v-model="formInline.name" placeholder="参数名"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit">查询</el-button>
-      </el-form-item>
-    </el-form>
+
     <el-table :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)" stripe style="width: 100%;" :highlight-current-row="true">
       <el-table-column prop="id" label="编号" sortable align="center"></el-table-column>
       <el-table-column prop="name" label="设备参数名称" align="center"></el-table-column>
@@ -49,13 +42,6 @@
 </template>
 
 <script>
-// import {
-//   getDevArgList,
-//   deleteDevArgById,
-//   addDevArg,
-//   updateDevArgInfo
-// } from '../../http/devArg'
-// import { getDeviceList } from '../../http/device'
 export default {
   name: 'DevArgList',
   data () {
@@ -94,6 +80,7 @@ export default {
     }
   },
   mounted () {
+    console.log()
   },
   methods: {
     pageChange (currentPage) {

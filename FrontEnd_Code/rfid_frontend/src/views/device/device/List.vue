@@ -1,12 +1,7 @@
 <template>
   <div class="search">
     <el-form :inline="true" :model="formInline" class="form-inline">
-      <el-form-item label="设备名">
-        <el-input v-model="formInline.name" placeholder="设备名"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit">查询</el-button>
-      </el-form-item>
+
       <el-form-item>
         <el-button type="success" @click="$router.push('/main/device/edit')">新增设备</el-button>
       </el-form-item>
