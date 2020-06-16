@@ -33,6 +33,14 @@ const routes = [
           nav: '设备编辑',
           activeItem: '3-1'
         }
+      }, {
+        path: 'device/connect/:devId?',
+        component: () => import('../views/device/device/Connect.vue'),
+        name: 'DeviceConnect',
+        meta: {
+          nav: '设备链接',
+          activeItem: '3-1'
+        }
       },
       {
         path: 'device/arg',
