@@ -11,15 +11,15 @@ public interface TransportService {
     // 增加Transport
     public ResponseVO addTransport(TransportInfoVO transportInfoVO);
 
-    // 删除batch
+    // 删除Transport
     public ResponseVO removeTransport(int TransportId);
 
-    // 修改batch
+    // 修改Transport
     public ResponseVO updateTransport(TransportVO transportVO);
 
-    // 查询一条batch信息
+    // 查询一条Transport信息
     public ResponseVO searchOneTransport(int TransportId);
 
-    // 查询所有batch信息
+    // 查询所有Transport信息
     public ResponseVO searchTransportList();
 }
