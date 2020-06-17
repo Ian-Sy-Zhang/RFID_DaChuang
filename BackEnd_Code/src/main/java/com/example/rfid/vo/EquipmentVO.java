@@ -55,4 +55,16 @@ public class EquipmentVO {
     public void setConnectionType(String connectionType) {
         this.connectionType = connectionType;
     }
+
+    @Override
+    public String toString() {
+        return "EquipmentVO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", ip='" + ip + '\'' +
+                ", abs='" + abs + '\'' +
+                ", status='" + status + '\'' +
+                ", connectionType='" + connectionType + '\'' +
+                '}';
+    }
 }

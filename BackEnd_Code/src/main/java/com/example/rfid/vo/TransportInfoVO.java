@@ -1,21 +1,46 @@
 package com.example.rfid.vo;
 
-public class TransportVO {
+import com.example.rfid.data.dataAdmin.TransportMapper;
+
+public class TransportInfoVO {
+    // 前半部分包含了一些设备信息
+    private String name;
+    private String ip;
+
+    // 后半部分包含了运输信息
     private int TransportId;
     private int CAS_id;
     private int batchId;
     private int Num;
     private int State;
 
-    public TransportVO() {
+    public TransportInfoVO() {
     }
 
-    public TransportVO(TransportInfoVO transportInfoVO) {
-        TransportId = transportInfoVO.getTransportId();
-        this.CAS_id = transportInfoVO.getCAS_id();
-        this.batchId = transportInfoVO.getBatchId();
-        Num = transportInfoVO.getNum();
-        State = transportInfoVO.getState();
+    public TransportInfoVO(String name, String ip, int transportId, int CAS_id, int batchId, int num, int state) {
+        this.name = name;
+        this.ip = ip;
+        TransportId = transportId;
+        this.CAS_id = CAS_id;
+        this.batchId = batchId;
+        Num = num;
+        State = state;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public int getTransportId() {
