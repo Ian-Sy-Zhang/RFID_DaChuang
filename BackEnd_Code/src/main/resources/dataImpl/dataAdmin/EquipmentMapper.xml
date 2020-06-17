@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rfid.data.dataAdmin.EquipmentMapper">
+
+    <insert id="addEquipment">
+      insert into equipment
+      (id, name, ip, abs, status, connectionType)
+      values
+      (#{equipmentVO.id},#{equipmentVO.name},#{equipmentVO.ip},#{equipmentVO.abs},#{equipmentVO.status},#{equipmentVO.connectionType})
+    </insert>
+
+    <update id="updateEquipment">
+      update equipment set
+      name = #{equipmentVO.name}, ip = #{equipmentVO.ip}, abs = #{equipmentVO.abs}, status = #{equipmentVO.status}, connectionType = #{equipmentVO.connectionType}
+      where
+      equipment.id = #{equipmentVO.id}
+    </update>
+
+    <delete id="removeEquipment">
+      delete from equipment where equipment.id = #{id}
+    </delete>
+
+    <select id="searchEquipment" resultType="com.example.rfid.vo.EquipmentVO">
+      select * from equipment where equipment.id = #{id}
+    </select>
+
+    <select id="searchEquipmentList" resultType="com.example.rfid.vo.EquipmentVO">
+      select * from equipment
+    </select>
+</mapper>

@@ -6,6 +6,9 @@ import com.example.rfid.vo.TransportInfoVO;
 import com.example.rfid.vo.TransportVO;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class TransportServiceImpl implements TransportService {
     @Override
@@ -25,6 +28,7 @@ public class TransportServiceImpl implements TransportService {
 
     @Override
     public ResponseVO searchOneTransport(int TransportId) {
+
         return null;
     }
 

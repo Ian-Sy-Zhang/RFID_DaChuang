@@ -7,6 +7,17 @@ public class TransportVO {
     private int Num;
     private int State;
 
+    public TransportVO() {
+    }
+
+    public TransportVO(TransportInfoVO transportInfoVO) {
+        TransportId = transportInfoVO.getTransportId();
+        this.CAS_id = transportInfoVO.getCAS_id();
+        this.batchId = transportInfoVO.getBatchId();
+        Num = transportInfoVO.getNum();
+        State = transportInfoVO.getState();
+    }
+
     public int getTransportId() {
         return TransportId;
     }
