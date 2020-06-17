@@ -13,16 +13,16 @@ import org.slf4j.LoggerFactory;
 public class MqttConnection implements MQTTConnectionService {
     private static final Logger log = LoggerFactory.getLogger(MqttPushClient.class);
 
-    private static MqttClient client;//连接客户端
+    private MqttClient client = null;
 
-    private static MemoryPersistence memoryPersistence;
+    private MemoryPersistence memoryPersistence;
 
-    public static MqttClient getClient() {
+    public MqttClient getClient() {
         return client;
     }
 
-    public static void setClient(MqttClient client) {
-        MqttConnection.client = client;
+    public void setClient(MqttClient client) {
+        this.client = client;
     }
 
     private MqttConnectOptions getOption(String userName, String password, int outTime, int KeepAlive) {
@@ -64,7 +64,6 @@ public class MqttConnection implements MQTTConnectionService {
             client = new MqttClient(mqttConfiguration.getHost(), mqttConfiguration.getClientId(),memoryPersistence );
             MqttConnectOptions options = getOption(mqttConfiguration.getUsername(),mqttConfiguration.getPassword(),
                     mqttConfiguration.getTimeout(),mqttConfiguration.getKeepAlive());
-            MqttPushClient.setClient(client);
             try {
                 client.setCallback(new ConnectionCallback(this,mqttConfiguration));
                 if (!client.isConnected()) {
@@ -77,7 +76,7 @@ public class MqttConnection implements MQTTConnectionService {
                     log.info("MQTT断连重连成功");
                 }
                 //订阅默认主题，监听客户端信息
-                MqttRecieveClient mqttRecieveClient = new MqttRecieveClient();
+                MqttRecieveClient mqttRecieveClient = new MqttRecieveClient(this);
                 mqttRecieveClient.subscribe(new String[]{"$SYS/brokers/+/clients/+/connected", "$SYS/brokers/+/clients/+/disconnected"}, new int[]{1, 1});
                 //订阅主题
                 mqttRecieveClient.subscribe(mqttConfiguration.getTopic(),mqttConfiguration.getQos());

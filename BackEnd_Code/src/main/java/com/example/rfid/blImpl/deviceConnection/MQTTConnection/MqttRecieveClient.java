@@ -10,8 +10,8 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class MqttRecieveClient implements MQTTRecieveService {
     private static MqttClient client;
-    public MqttRecieveClient(){
-        client = MqttConnection.getClient();
+    public MqttRecieveClient(MqttConnection mqttConnection){
+        client = mqttConnection.getClient();
     }
 
     /**
@@ -38,8 +38,8 @@ public class MqttRecieveClient implements MQTTRecieveService {
      */
     public void subscribe(String[] topic,int[] qos) {
         try {
-            MqttPushClient.getClient().unsubscribe(topic);
-            MqttPushClient.getClient().subscribe(topic, qos);
+            client.unsubscribe(topic);
+            client.subscribe(topic, qos);
         } catch (MqttException e) {
             e.printStackTrace();
         }

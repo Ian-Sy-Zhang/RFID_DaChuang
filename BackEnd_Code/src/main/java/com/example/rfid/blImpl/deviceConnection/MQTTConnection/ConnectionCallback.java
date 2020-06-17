@@ -18,13 +18,13 @@ public class ConnectionCallback implements MqttCallback {
     // private RedisTemplate<String, Object> redisDao;
 
     private static final Logger log = LoggerFactory.getLogger(ConnectionCallback.class);
-    private MqttConnection client;
+    private MqttConnection mqttConnection;
 
 
     private MqttConfiguration mqttConfiguration;
 
-    public ConnectionCallback(MqttConnection client, MqttConfiguration mqttConfiguration) {
-        this.client = client;
+    public ConnectionCallback(MqttConnection mqttConnection, MqttConfiguration mqttConfiguration) {
+        this.mqttConnection = mqttConnection;
         this.mqttConfiguration = mqttConfiguration;
     }
 
@@ -33,16 +33,14 @@ public class ConnectionCallback implements MqttCallback {
     @Override
     public void connectionLost(Throwable cause) {
         /** 连接丢失后，一般在这里面进行重连 **/
-        if (client != null) {
+        if (mqttConnection != null) {
             while (true) {
                 try {
                     log.info("[MQTT] 连接断开，30S之后尝试重连...");
                     Thread.sleep(30000);
-                    MqttConnection mqttConnection = new MqttConnection();
                     mqttConnection.connect(mqttConfiguration);
-                    if (MqttPushClient.getClient().isConnected()) {
+                    if (mqttConnection.getClient().isConnected()) {
                         System.out.println("重连成功");
-
                     }
                     break;
                 } catch (Exception e) {

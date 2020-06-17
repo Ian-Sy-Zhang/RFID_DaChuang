@@ -15,18 +15,18 @@ public class MqttPushClient implements MQTTPushService
 
     private static final Logger log = LoggerFactory.getLogger(MqttPushClient.class);
 
-    private static MqttClient client;
+    private MqttClient client;
 
-    public MqttPushClient(){
-        client= MqttConnection.getClient();
+    public MqttPushClient(MqttConnection mqttConnection){
+        client= mqttConnection.getClient();
     }
 
-    public static MqttClient getClient() {
+    public MqttClient getClient() {
         return client;
     }
 
-    public static void setClient(MqttClient client) {
-        MqttPushClient.client = client;
+    public void setClient(MqttClient client) {
+        this.client = client;
     }
 
 
@@ -51,7 +51,7 @@ public class MqttPushClient implements MQTTPushService
         message.setQos(qos);
         message.setRetained(retained);
         message.setPayload(pushMessage.getBytes());
-        MqttTopic mTopic = MqttPushClient.getClient().getTopic(topic);
+        MqttTopic mTopic = client.getTopic(topic);
         if(null == mTopic){
             log.error("MQTT topic 不存在");
         }
