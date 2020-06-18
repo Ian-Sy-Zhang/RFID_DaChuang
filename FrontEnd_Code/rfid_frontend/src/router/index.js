@@ -46,8 +46,34 @@ const routes = [
           nav: '设备参数',
           activeItem: '3-3'
         }
+      },
+      {
+        path: 'ruleEngine/data',
+        name: 'DataRule',
+        component: () => import('../views/ruleEngine/DataRule/rule.vue'),
+        meta: {
+          nav: '数据转发',
+          activeItem: '4-1'
+        }
+      },
+      {
+        path: 'ruleEngine/equipment',
+        name: 'EquipmentRule',
+        component: () => import('../views/ruleEngine/EquipmentRule/rule.vue'),
+        meta: {
+          nav: '设备联动',
+          activeItem: '4-2'
+        }
+      },
+      {
+        path: 'ruleEngine/data/modify',
+        name: 'DataRule',
+        component: () => import('../views/ruleEngine/DataRule/modify.vue'),
+        meta: {
+          nav: '数据转发',
+          activeItem: '4-1'
+        }
       }
-
     ]
   }
 
