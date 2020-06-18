@@ -27,4 +27,8 @@
     <select id="searchEquipmentList" resultType="com.example.rfid.vo.EquipmentVO">
       select * from equipment
     </select>
+
+    <select id="getEquipmentNameByIp" resultType="String">
+      select name from equipment where ip = #{ip}
+    </select>
 </mapper>
