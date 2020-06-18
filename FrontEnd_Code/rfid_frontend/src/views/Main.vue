@@ -21,6 +21,12 @@
             <el-menu-item index="3-1" route="/main/device">设备列表</el-menu-item>
             <el-menu-item index="3-3" route="/main/device/arg">设备参数</el-menu-item>
           </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="iconfont icon-equipment-set"></i>规则引擎</template>
+            <el-menu-item index="4-1" route="/main/device">数据转发</el-menu-item>
+            <el-menu-item index="4-3" route="/main/device/arg">设备联动</el-menu-item>
+          </el-submenu>
         </el-menu>
       </el-aside>
       <el-main>
