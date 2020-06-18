@@ -17,10 +17,12 @@
 
       <el-table-column label="操作" width="180" align="center">
         <template slot-scope="scope">
-          <el-button @click="$router.push('/main/device/edit/' + scope.row.id)" type="text" size="small">
+          <el-button @click="goToArgs(scope.row)" type="text" size="small">
             <i class="iconfont icon-details"></i>查看</el-button>
           <el-button @click="handleDelete(scope.row)" type="text" size="small">
             <i class="iconfont icon-delete"></i>删除</el-button>
+          <el-button @click="connect(scope.row)" type="text" size="small">
+            <i class="iconfont icon-delete"></i>连接</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -36,23 +38,52 @@ export default {
   name: 'DeviceList',
   data () {
     return {
-      formInline: {
-        name: '',
-        email: ''
-      },
-      tableData: [],
+      tableData: [
+        {
+          id: 2,
+          name: 'test1',
+          code: 'qwwwq',
+          pubNetAddr: '222.222.333.222',
+          model: 'ww-1s',
+          status: 'online',
+          type: 'http'
+        }
+      ],
       currentPage: 1,
       pageSize: 5
     }
   },
   mounted () {
-    // getDeviceList()
-    //   .then(res => {
-    //     this.tableData = res.rows
-    //   })
-    //   .catch(err => {
-    //     this.$message.error(err.message)
-    //   })
+    if (!this.$store.state.haveDeviceList) {
+      this.$http.get(this.$api.Device.getAllDevice)
+        .then(res => {
+          this.tableData = []
+          let counter = 1
+          for (const ele of res) {
+            const temp = {
+              id: counter,
+              name: ele.name,
+              connectionType: 'http',
+              code: ele.id,
+              pubNetAddr: ele.ip,
+              model: 'standard',
+              status: ele.status,
+              type: 'http',
+              abs: ele.abs
+            }
+            counter++
+            console.log(temp)
+            this.tableData.push(temp)
+            this.$store.commit('devicePush', temp)
+            this.$store.commit('getList')
+          }
+        })
+        .catch(err => {
+          this.$message.error(err.message)
+        })
+    } else {
+      this.tableData = this.$store.state.deviceList
+    }
   },
   methods: {
     onSubmit () {
@@ -62,49 +93,38 @@ export default {
         this.formInline[key] &&
           (query[key] = (this.formInline[key] + '').trim())
       })
-      // getDeviceList(query)
-      //   .then(res => {
-      //     this.tableData = res.rows
-      //   })
-      //   .catch(err => {
-      //     this.$message.error(err.message)
-      //   })
     },
-    formatIsAdmin (row, column, cellValue) {
-      return cellValue ? '是' : '否'
+    handleDelete (row) { // 删除
+      console.log('row:', row)
+      this.$confirm('此操作将永久删除该设备, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+        .then(() => {
+          // deleteDeviceById(row.id)
+          //   .then(res => {
+          //     this.$message({
+          //       type: 'success',
+          //       message: '删除成功!'
+          //     })
+          //     this.tableData = this.tableData.filter(
+          //       item => item.id !== row.id
+          //     )
+          //   })
+          //   .catch(err => {
+          //     this.$message.error(err.message)
+          //   })
+        })
+        .catch(err => {
+          console.log(err)
+        })
     },
-    formatStatus (row, column, cellValue) {
-      return cellValue === 'ok' ? '正常' : '已禁用'
+    connect (row) {
+      this.$router.push({ name: 'DeviceConnect', params: row })
     },
-    // handleDelete (row) { // 删除
-    //   console.log('row:', row)
-    //   this.$confirm('此操作将永久删除该设备, 是否继续?', '提示', {
-    //     confirmButtonText: '确定',
-    //     cancelButtonText: '取消',
-    //     type: 'warning'
-    //   })
-    //     .then(() => {
-    //       deleteDeviceById(row.id)
-    //         .then(res => {
-    //           this.$message({
-    //             type: 'success',
-    //             message: '删除成功!'
-    //           })
-    //           this.tableData = this.tableData.filter(
-    //             item => item.id !== row.id
-    //           )
-    //         })
-    //         .catch(err => {
-    //           this.$message.error(err.message)
-    //         })
-    //     })
-    //     .catch(err => {
-    //       console.log(err)
-    //     })
-    // },
-    addDevice () {
-      // 添加设备
-      this.$router.push('/main/device/setting')
+    goToArgs (row) {
+      this.$router.push({ name: 'DevArgList', params: row })
     },
     pageChange (currentPage) {
       console.log('当前页：', currentPage)

@@ -52,9 +52,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/rules/people.drl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/rfid/bl/RuleEngine/RuleEngineTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/rfid/bl/RuleEngine/RuleEngineTest.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,7 +269,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../Program Files (x86)/Apache/apache-maven-3.6.3" />
+        <option name="mavenHome" value="D:/../Program Files (x86)/Apache/apache-maven-3.6.3" />
         <option name="userSettingsFile" value="C:\Program Files (x86)\Apache\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -483,6 +480,7 @@
       <recent name="com.example.rfid.blImpl.dataAnalysis" />
       <recent name="com.example.rfid.data.dataAnalysis" />
     </key>
+
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -497,7 +495,11 @@
       <recent name="com.example.rfid.vo" />
       <recent name="com.example.rfid.bl.RuleEngine" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CALSS\programs\gitHub\RFID_DaChuang\BackEnd_Code\src\main\resources" />
       <recent name="D:\课程\大三下\智能物联网软件创新设计\项目\rfid\RFID_DaChuang\BackEnd_Code\src\main\resources\rules\start" />
       <recent name="D:\课程\大三下\智能物联网软件创新设计\项目\rfid\RFID_DaChuang\BackEnd_Code\src\main\java\com\example\rfid" />
       <recent name="D:\课程\大三下\智能物联网软件创新设计\项目\rfid\RFID_DaChuang\BackEnd_Code\src\main\resources" />
@@ -513,19 +515,10 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.RFIDApplication (1)">
     <configuration name="RuleEngineTest.fireRules" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+
       <module name="rfid" />
       <extension name="coverage">
         <pattern>
@@ -625,6 +618,34 @@
         <item itemvalue="JUnit.RuleEngineTest.getEquipmentRules" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.13592896" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -750,12 +771,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -786,9 +802,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="654" y="144" key="#Project_Structure/0.0.2048.1112@0.0.2048.1112" timestamp="1590935415378" />
-    <state x="766" y="228" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590935387421">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="557" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592377267299">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="557" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1592377267299" />
     <state x="766" y="228" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1590935387421" />
     <state x="1342" y="262" key="#com.intellij.ide.util.MemberChooser" timestamp="1591962200526">
       <screen x="0" y="0" width="2048" height="1112" />
@@ -802,45 +819,58 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="901" y="320" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1591501733217" />
-    <state width="1091" height="414" key="GridCell.Tab.0.bottom" timestamp="1592288291650">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.0.bottom" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1091" height="414" key="GridCell.Tab.0.center" timestamp="1592288291650">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.0.center" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1091" height="414" key="GridCell.Tab.0.left" timestamp="1592288291649">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.0.left" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291649" />
-    <state width="1091" height="414" key="GridCell.Tab.0.right" timestamp="1592288291650">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.0.right" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1091" height="414" key="GridCell.Tab.1.bottom" timestamp="1592288291650">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.1.bottom" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1091" height="414" key="GridCell.Tab.1.center" timestamp="1592288291650">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.1.center" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1091" height="414" key="GridCell.Tab.1.left" timestamp="1592288291650">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.1.left" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1091" height="414" key="GridCell.Tab.1.right" timestamp="1592288291650">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1264" height="208" key="GridCell.Tab.1.right" timestamp="1592409788564">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1264" height="208" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592409788564" />
     <state width="1091" height="414" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
+    <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1592376974068">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="212" height="477" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1592376974068" />
     <state x="945" y="214" key="Maven.ArtifactSearchDialog" timestamp="1590936036505">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="945" y="214" key="Maven.ArtifactSearchDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1590936036505" />
-    <state x="622" y="210" key="SettingsEditor" timestamp="1591453809370">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="252" y="75" width="996" height="707" key="SettingsEditor" timestamp="1592378322602">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="252" y="75" width="996" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592378322602" />
     <state x="622" y="210" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1591453809370" />
     <state x="1081" y="292" key="Vcs.Push.Dialog.v2" timestamp="1591501585322">
       <screen x="0" y="0" width="2048" height="1112" />
@@ -858,6 +888,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1343" y="142" width="464" height="523" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1591500712180" />
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592384505931">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1592384505931" />
     <state x="1280" y="360" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591501043276">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
