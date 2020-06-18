@@ -50,6 +50,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
             <scope>runtime</scope>
         </dependency>
 
@@ -176,6 +177,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
 
             <!--jacoco plugins-->
@@ -197,6 +201,7 @@
                     </excludes>
                     <rules>
                     </rules>
+
                 </configuration>
                 <executions>
                     <execution>
@@ -214,7 +219,6 @@
                     </execution>
                 </executions>
             </plugin>
-
 
 
         </plugins>

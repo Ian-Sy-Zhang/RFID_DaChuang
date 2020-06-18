@@ -22,4 +22,7 @@ public interface EquipmentService {
 
     // 查询所有equipment信息
     public ResponseVO searchEquipmentList();
+
+    // 查询设备名
+    public ResponseVO getEquipmentNameByIp(String ip);
 }

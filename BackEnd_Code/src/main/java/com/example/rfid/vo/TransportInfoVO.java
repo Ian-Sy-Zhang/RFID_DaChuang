@@ -8,23 +8,23 @@ public class TransportInfoVO {
     private String ip;
 
     // 后半部分包含了运输信息
-    private int TransportId;
-    private int CAS_id;
+    private int transportId;
+    private int casId;
     private int batchId;
-    private int Num;
-    private int State;
+    private int num;
+    private int state;
 
     public TransportInfoVO() {
     }
 
-    public TransportInfoVO(String name, String ip, int transportId, int CAS_id, int batchId, int num, int state) {
+    public TransportInfoVO(String name, String ip, int transportId, int casId, int batchId, int num, int state) {
         this.name = name;
         this.ip = ip;
-        TransportId = transportId;
-        this.CAS_id = CAS_id;
+        this.transportId = transportId;
+        this.casId = casId;
         this.batchId = batchId;
-        Num = num;
-        State = state;
+        this.num = num;
+        this.state = state;
     }
 
     public String getName() {
@@ -44,19 +44,19 @@ public class TransportInfoVO {
     }
 
     public int getTransportId() {
-        return TransportId;
+        return transportId;
     }
 
     public void setTransportId(int transportId) {
-        TransportId = transportId;
+        this.transportId = transportId;
     }
 
-    public int getCAS_id() {
-        return CAS_id;
+    public int getCasId() {
+        return casId;
     }
 
-    public void setCAS_id(int CAS_id) {
-        this.CAS_id = CAS_id;
+    public void setCasId(int casId) {
+        this.casId = casId;
     }
 
     public int getBatchId() {
@@ -68,18 +68,18 @@ public class TransportInfoVO {
     }
 
     public int getNum() {
-        return Num;
+        return num;
     }
 
     public void setNum(int num) {
-        Num = num;
+        this.num = num;
     }
 
     public int getState() {
-        return State;
+        return state;
     }
 
     public void setState(int state) {
-        State = state;
+        this.state = state;
     }
 }
