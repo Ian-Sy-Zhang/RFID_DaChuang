@@ -39,35 +39,7 @@
 export default {
   name: 'DeviceEdit',
   mounted () {
-    // getDevTypeList()
-    //   .then(res => {
-    //     this.devTypes = res.rows
-    //   })
-    //   .catch(err => {
-    //     this.$message.error(err.message)
-    //   })
-    // getUserList()
-    //   .then(res => {
-    //     this.users = res.rows
-    //   })
-    //   .catch(err => {
-    //     this.$message.error(err.message)
-    //   })
-    // // 加载设备信息
-    // if (!this.$route.params.devId) return
-    // getDeviceDetail(this.$route.params.devId)
-    //   .then(res => {
-    //     getDevArgList({ deviceId: res.id })
-    //       .then(argRes => {
-    //         this.device = Object.assign({}, res, { args: argRes.rows })
-    //       })
-    //       .catch(err => {
-    //         this.$message.error(err.message)
-    //       })
-    //   })
-    //   .catch(err => {
-    //     this.$message.error(err.message)
-    //   })
+    console.log(this.$route.params)
   },
   data () {
     return {
@@ -96,8 +68,16 @@ export default {
     back () {
       this.$router.back()
     },
-    saveDeviceInfo (device) {
+    saveDeviceInfo () {
       console.log(this.device)
+      const newDevice = {
+        name: this.device.name,
+        ip: this.device.pubNetAddr,
+        abs: this.device.desc,
+        status: this.device.status,
+        connectionType: this.device.connection
+      }
+      this.$http.post(this.$api.Device.addDevice, newDevice)
     },
     clearForm (form) {
       this.device.args = this.device.args.map(item => {

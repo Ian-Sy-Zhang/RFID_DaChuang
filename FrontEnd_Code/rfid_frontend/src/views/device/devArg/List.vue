@@ -17,13 +17,9 @@ export default {
   name: 'DevArgList',
   data () {
     return {
-      formInline: {
-        name: '',
-        email: ''
-      },
       tableData: [],
       currentPage: 1,
-      pageSize: 5,
+      pageSize: 10,
       centerDialogVisible: false,
       currentDevArg: {
         device: {
@@ -51,15 +47,17 @@ export default {
     }
   },
   mounted () {
-    const row = this.$route.params
+    let row = this.$route.params
+    console.log(row.deviceIndex)
     this.currentDevArg.device.id = row.id
     this.currentDevArg.device.name = row.name
-    console.log(row.code)
+    row = this.$store.state.deviceList[row.id - 1]
+    console.log(this.$store.state.deviceList[row.id - 1])
 
     if (row.code !== undefined) {
       this.tableData = [{ name: 'code', desc: row.code, deviceName: row.name }, { name: 'pubNetAddr', desc: row.pubNetAddr, deviceName: row.name },
         { name: 'model', desc: row.model, deviceName: row.name }, { name: 'status', desc: row.status, deviceName: row.name },
-        { name: 'connectionType', desc: row.type, deviceName: row.name }]
+        { name: 'connectionType', desc: row.type, deviceName: row.name }, { name: 'abstract', desc: row.abs, deviceName: row.name }]
     }
   },
   methods: {

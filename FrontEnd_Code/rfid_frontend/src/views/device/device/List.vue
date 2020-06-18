@@ -38,10 +38,6 @@ export default {
   name: 'DeviceList',
   data () {
     return {
-      formInline: {
-        name: '',
-        email: ''
-      },
       tableData: [
         {
           id: 2,
@@ -58,13 +54,36 @@ export default {
     }
   },
   mounted () {
-    // getDeviceList()
-    //   .then(res => {
-    //     this.tableData = res.rows
-    //   })
-    //   .catch(err => {
-    //     this.$message.error(err.message)
-    //   })
+    if (!this.$store.state.haveDeviceList) {
+      this.$http.get(this.$api.Device.getAllDevice)
+        .then(res => {
+          this.tableData = []
+          let counter = 1
+          for (const ele of res) {
+            const temp = {
+              id: counter,
+              name: ele.name,
+              connectionType: 'http',
+              code: ele.id,
+              pubNetAddr: ele.ip,
+              model: 'standard',
+              status: ele.status,
+              type: 'http',
+              abs: ele.abs
+            }
+            counter++
+            console.log(temp)
+            this.tableData.push(temp)
+            this.$store.commit('devicePush', temp)
+            this.$store.commit('getList')
+          }
+        })
+        .catch(err => {
+          this.$message.error(err.message)
+        })
+    } else {
+      this.tableData = this.$store.state.deviceList
+    }
   },
   methods: {
     onSubmit () {
@@ -74,13 +93,6 @@ export default {
         this.formInline[key] &&
           (query[key] = (this.formInline[key] + '').trim())
       })
-      // getDeviceList(query)
-      //   .then(res => {
-      //     this.tableData = res.rows
-      //   })
-      //   .catch(err => {
-      //     this.$message.error(err.message)
-      //   })
     },
     handleDelete (row) { // 删除
       console.log('row:', row)
