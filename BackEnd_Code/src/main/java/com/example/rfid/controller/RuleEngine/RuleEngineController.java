@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/ruleEngine")
 public class RuleEngineController {
-
+/*
     @Autowired
     RuleEngine ruleEngine;
 
@@ -108,6 +108,8 @@ public class RuleEngineController {
         }
     }
 
+
+
     @RequestMapping("/modifyEquipmentRule")
     public ResponseVO modifyEquipmentRule(@RequestBody EquipmentRule equipmentRule){
         try {
@@ -177,5 +179,5 @@ public class RuleEngineController {
             return ResponseVO.buildFailure("执行规则失败");
         }
     }
-
+*/
 }
