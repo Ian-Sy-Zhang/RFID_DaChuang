@@ -20,11 +20,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/Connection")
 public class ConnectionController {
-    @Autowired
-    MQTTConnectionService mqttConnectionService;
-
-    @Autowired
-    HTTPConnectService httpConnectService;
 
     @Autowired
     EquipmentService equipmentService;
@@ -36,7 +31,7 @@ public class ConnectionController {
 
     @GetMapping("/connection/{id}")
     public ResponseVO connect(@PathVariable int id) throws IOException {
-        ResponseVO temp = equipmentService.searchOneTransport(id);
+        ResponseVO temp = equipmentService.searchOneEquipment(id);
         EquipmentVO mes = (EquipmentVO) temp.getContent();
         if(mes.getConnectionType()=="http")
         {
@@ -75,7 +70,7 @@ public class ConnectionController {
 
     @GetMapping("/close/{id}")
     public ResponseVO close(@PathVariable int id){
-        ResponseVO temp = equipmentService.searchOneTransport(id);
+        ResponseVO temp = equipmentService.searchOneEquipment(id);
         EquipmentVO mes = (EquipmentVO) temp.getContent();
         if(mes.getConnectionType()=="http"){
             HTTPConnect httpConnect = httpConnects.get(id);
