@@ -99,11 +99,8 @@ export default {
               type: 'success',
               message: '删除成功!'
             })
-            console.log(res)
             this.$store.commit('removeDevice', row.id - 1)
-            console.log(this.tableData)
             delete this.tableData[row.id - 1]
-            console.log(this.tableData)
             this.tableShow = false
             this.$nextTick(() => {
               this.tableShow = true
@@ -112,19 +109,6 @@ export default {
             .catch(err => {
               this.$message.error(err.message)
             })
-          // deleteDeviceById(row.id)
-          //   .then(res => {
-          //     this.$message({
-          //       type: 'success',
-          //       message: '删除成功!'
-          //     })
-          //     this.tableData = this.tableData.filter(
-          //       item => item.id !== row.id
-          //     )
-          //   })
-          //   .catch(err => {
-          //     this.$message.error(err.message)
-          //   })
         })
         .catch(err => {
           console.log(err)

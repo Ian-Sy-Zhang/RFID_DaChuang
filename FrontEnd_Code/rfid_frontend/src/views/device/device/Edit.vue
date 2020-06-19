@@ -77,9 +77,17 @@ export default {
         status: this.device.status,
         connectionType: this.device.connection
       }
-      this.$http.post(this.$api.Device.addDevice, newDevice).then(
-
-      )
+      this.$http.post(this.$api.Device.addDevice, newDevice).then(res => {
+        this.$message({
+          type: 'success',
+          message: '新增成功!'
+        })
+        this.$store.commit('reGetList')
+        this.$router.push({ name: 'Device' })
+      })
+        .catch(err => {
+          console.log(err)
+        })
     },
     clearForm (form) {
       this.device.args = this.device.args.map(item => {
