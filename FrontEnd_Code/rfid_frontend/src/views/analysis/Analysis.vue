@@ -69,82 +69,80 @@
 </template>
 
 <script>
-  import {request} from '../../network/request'
-  export default {
-    name: 'Analysis',
-    data () {
-        return {
-          dangerousChems: [
-              {
-                cas_id: '0',
-                name: 'H2',
-                existType: 'gas',
-                fusionPoint: '-20.0℃',
-                boilingPoint: '-10.0℃',
-                oxidation: 'high',
-                reducibility: 'high',
-                isOrganic: 'no',
-                inflammability: 'high',
-                explosion: 'high'
-              },
-            {
-              cas_id: '1',
-              name: 'H2O',
-              existType: 'Liquid',
-              fusionPoint: '-20.0℃',
-              boilingPoint: '-10.0℃',
-              oxidation: 'high',
-              reducibility: 'high',
-              isOrganic: 'no',
-              inflammability: 'high',
-              explosion: 'high'
-            }
-          ],
-          dangerousBatches: [
-            {
-              batchId: '1',
-              dangerousTimes: '4'
-            },
-            {
-              batchId: '2',
-              dangerousTimes: '4'
-            },
-            {
-              batchId: '3',
-              dangerousTimes: '3'
-            },
-          ],
+import { request } from '../../network/request'
+export default {
+  name: 'Analysis',
+  data () {
+    return {
+      dangerousChems: [
+        {
+          cas_id: '0',
+          name: 'H2',
+          existType: 'gas',
+          fusionPoint: '-20.0℃',
+          boilingPoint: '-10.0℃',
+          oxidation: 'high',
+          reducibility: 'high',
+          isOrganic: 'no',
+          inflammability: 'high',
+          explosion: 'high'
+        },
+        {
+          cas_id: '1',
+          name: 'H2O',
+          existType: 'Liquid',
+          fusionPoint: '-20.0℃',
+          boilingPoint: '-10.0℃',
+          oxidation: 'high',
+          reducibility: 'high',
+          isOrganic: 'no',
+          inflammability: 'high',
+          explosion: 'high'
         }
-    },
-    mounted: function() {
+      ],
+      dangerousBatches: [
+        {
+          batchId: '1',
+          dangerousTimes: '4'
+        },
+        {
+          batchId: '2',
+          dangerousTimes: '4'
+        },
+        {
+          batchId: '3',
+          dangerousTimes: '3'
+        }
+      ]
+    }
+  },
+  mounted: function () {
+    request({
+      url: '/dataAnalysis/getDangerousChemList'
+    }).then(res => {
+      this.dangerousChems = res.data.content
       request({
-        url: '/dataAnalysis/getDangerousChemList'
+        url: '/dataAnalysis/getDangerousBatchList'
       }).then(res => {
-          this.dangerousChems = res.data.content;
-          request({
-            url: '/dataAnalysis/getDangerousBatchList'
-          }).then(res => {
-              this.dangerousBatches = res.data.content;
-          }).catch(err => {
-              console.log(err);
-          })
+        this.dangerousBatches = res.data.content
       }).catch(err => {
-        console.log(err);
+        console.log(err)
       })
-    },
-    methods: {
-      tableRowClassName({row, rowIndex}) {
-        const degree = this.dangerousBatches[rowIndex]['dangerousTimes']
-        if (parseInt(degree) > 3) {
-            return 'danger-row';
-        }
-        else {
-            return 'warning-row'
-        }
-        return '';
+    }).catch(err => {
+      console.log(err)
+    })
+  },
+  methods: {
+    tableRowClassName ({ row, rowIndex }) {
+      const degree = this.dangerousBatches[rowIndex].dangerousTimes
+      if (parseInt(degree) > 3) {
+        return 'danger-row'
+      } else {
+        return 'warning-row'
       }
     }
   }
+}
 </script>
 
 <style>
