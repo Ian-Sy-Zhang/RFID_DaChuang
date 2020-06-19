@@ -14,8 +14,7 @@ export default {
     // 后加device id
     disConnect: baseUrl + '/dataAdmin/Equipment/setEquipmentOffline/'
   },
-
-  RuleEngine:{
+  RuleEngine: {
     addDataRule: baseUrl + '/ruleEngine/addDataRule',
     removeDataRule: baseUrl + '/ruleEngine/removeDataRule/',
     modifyDataRule: baseUrl + '/ruleEngine/modifyDataRule',

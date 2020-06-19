@@ -13,7 +13,7 @@
         <el-input v-model="rule.condition.state" placeholder="限定物流状态 格式 state=?">ip=?</el-input>
       </el-form-item>
       <el-form-item label="执行动作" style="text-align:left;" prop="action">
-        <el-checkbox v-model="rule.action.rescan">重新扫描</el-checkbox>
+        <el-checkbox v-model="rule.action.reScan">重新扫描</el-checkbox>
         <el-checkbox v-model="rule.action.shutDown">关机</el-checkbox>
         <el-checkbox v-model="rule.action.alert">发出警报</el-checkbox>
       </el-form-item>
@@ -44,7 +44,7 @@ export default {
           state: ''
         },
         action: {
-          rescan: false,
+          reScan: false,
           shutDown: false,
           alert: false
         }
@@ -78,9 +78,9 @@ export default {
       let actions = (params.action).split(" && ")
       console.log(actions)
       for(let i = 0; i < actions.length; i++){
-          if(actions[i].startsWith("rescan"))this.rule.action.rescan = true
+          if(actions[i].startsWith("reScan"))this.rule.action.reScan = true
           if(actions[i].startsWith("shutDown"))this.rule.action.shutDown = true
-          if(actions[i].startsWith("alert"))this.rule.condition.alert = true
+          if(actions[i].startsWith("alert"))this.rule.action.alert = true
       }        
     },
     saveRuleInfo () {
@@ -142,8 +142,8 @@ export default {
           state: ''
         },
         action: {
-          database: false,
-          log: false,
+          rescan: false,
+          shutDown: false,
           alert: false
         }
       }
