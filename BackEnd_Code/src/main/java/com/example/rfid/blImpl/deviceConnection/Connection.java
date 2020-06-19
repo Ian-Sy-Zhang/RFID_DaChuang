@@ -9,17 +9,19 @@ import com.example.rfid.po.MqttConfiguration;
 import com.example.rfid.vo.EquipmentVO;
 import com.example.rfid.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.Map;
 
+@Service
 public class Connection implements ConnectionService {
     @Autowired
     EquipmentService equipmentService;
 
     Map<Integer, HTTPConnect> httpConnects;
     MqttConnection mqttConnection = new MqttConnection();
-
+    @Override
     public ResponseVO connect(int id) {
         ResponseVO temp = equipmentService.searchOneEquipment(id);
         EquipmentVO mes = (EquipmentVO) temp.getContent();
@@ -59,7 +61,7 @@ public class Connection implements ConnectionService {
             return ResponseVO.buildSuccess(true);
         }
     }
-
+    @Override
     public ResponseVO close(int id){
         ResponseVO temp = equipmentService.searchOneEquipment(id);
         EquipmentVO mes = (EquipmentVO) temp.getContent();

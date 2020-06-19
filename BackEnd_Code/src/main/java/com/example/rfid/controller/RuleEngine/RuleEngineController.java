@@ -108,6 +108,8 @@ public class RuleEngineController {
         }
     }
 
+
+
     @RequestMapping("/modifyEquipmentRule")
     public ResponseVO modifyEquipmentRule(@RequestBody EquipmentRule equipmentRule){
         try {
@@ -177,5 +179,4 @@ public class RuleEngineController {
             return ResponseVO.buildFailure("执行规则失败");
         }
     }
-
 }
