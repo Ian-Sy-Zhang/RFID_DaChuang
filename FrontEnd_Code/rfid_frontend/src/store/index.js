@@ -18,6 +18,7 @@ export default new Vuex.Store({
     },
     reGetList (state) {
       state.haveDeviceList = false
+      state.deviceList = []
     },
     removeDevice (state, deviceIndex) {
       console.log(deviceIndex)

@@ -20,8 +20,10 @@
             <i class="iconfont icon-details"></i>查看</el-button>
           <el-button @click="handleDelete(scope.row)" type="text" size="small">
             <i class="iconfont icon-delete"></i>删除</el-button>
-          <el-button @click="connect(scope.row)" type="text" size="small">
+          <el-button v-if="scope.row.status==='offline'" @click="connect(scope.row)" type="text" size="small">
             <i class="iconfont icon-delete"></i>连接</el-button>
+          <el-button v-else  type="text" @click="disconnect(scope.row)" size="small">
+            <i class="iconfont icon-delete"></i>断开</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -44,7 +46,8 @@ export default {
           pubNetAddr: '222.222.333.222',
           model: 'ww-1s',
           status: 'online',
-          type: 'http'
+          type: 'http',
+          connected: this.status === 'online'
         }
       ],
       currentPage: 1,
@@ -71,11 +74,10 @@ export default {
               abs: ele.abs
             }
             counter++
-            console.log(temp)
             this.tableData.push(temp)
             this.$store.commit('devicePush', temp)
-            this.$store.commit('getList')
           }
+          this.$store.commit('getList')
         })
         .catch(err => {
           this.$message.error(err.message)
@@ -116,6 +118,9 @@ export default {
     },
     connect (row) {
       this.$router.push({ name: 'DeviceConnect', params: row })
+    },
+    disconnect (row) {
+      console.log(row)
     },
     goToArgs (row) {
       this.$router.push({ name: 'DevArgList', params: row })

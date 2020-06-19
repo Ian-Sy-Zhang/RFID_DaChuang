@@ -7,6 +7,9 @@ export default {
     addDevice: baseUrl + '/dataAdmin/Equipment/addEquipment',
     // 后加device id
     removeDevice: baseUrl + '/dataAdmin/Equipment/removeEquipment/'
+  },
+  Connect: {
+    connect: baseUrl+ ''
   }
 
 }
