@@ -2,7 +2,7 @@ spring:
   datasource:
      url: jdbc:mysql://localhost:3306/rfid?serverTimezone=CTT&characterEncoding=UTF-8
      username: root
-     password: 13951389414lyK
+     password: Goldenwind666
      driver-class-name: com.mysql.cj.jdbc.Driver
      max-active: 200
      max-idle: 20
