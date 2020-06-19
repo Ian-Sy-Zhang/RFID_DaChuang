@@ -4,7 +4,7 @@ public class TransportVO {
     private int TransportId;
     private int CAS_id;
     private int batchId;
-    private int Num;
+    private int num;
     private int State;
 
     public TransportVO() {
@@ -12,10 +12,18 @@ public class TransportVO {
 
     public TransportVO(TransportInfoVO transportInfoVO) {
         TransportId = transportInfoVO.getTransportId();
-        this.CAS_id = transportInfoVO.getCAS_id();
+        this.CAS_id = transportInfoVO.getCasId();
         this.batchId = transportInfoVO.getBatchId();
-        Num = transportInfoVO.getNum();
+        this.num = transportInfoVO.getNum();
         State = transportInfoVO.getState();
+    }
+
+    public TransportVO(int transportId, int CAS_id, int batchId, int num, int state) {
+        TransportId = transportId;
+        this.CAS_id = CAS_id;
+        this.batchId = batchId;
+        this.num = num;
+        State = state;
     }
 
     public int getTransportId() {
@@ -43,11 +51,11 @@ public class TransportVO {
     }
 
     public int getNum() {
-        return Num;
+        return num;
     }
 
     public void setNum(int num) {
-        Num = num;
+        this.num = num;
     }
 
     public int getState() {

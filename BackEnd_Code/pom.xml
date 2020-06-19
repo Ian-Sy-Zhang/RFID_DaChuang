@@ -50,6 +50,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
             <scope>runtime</scope>
         </dependency>
 
@@ -196,45 +197,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <!--jacoco plugins-->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.4</version>
-                <!-- Configuration 里面写配置信息 -->
                 <configuration>
-                    <!-- rules里面指定覆盖规则 -->
-                    <excludes>
-                        <exclude>**/com/example/goldenwind/po/*</exclude>
-                        <exclude>**/com/example/goldenwind/vo/*</exclude>
-                        <exclude>**/com/example/goldenwind/interceptor/*</exclude>
-                        <exclude>**/com/example/goldenwind/data/*</exclude>
-                        <exclude>**/com/example/goldenwind/config/*</exclude>
-                        <exclude>**/com/example/goldenwind/bl/*</exclude>
-                        <exclude>**/com/example/goldenwind/com.example.rfid.controller/*</exclude>
-                    </excludes>
-                    <rules>
-                    </rules>
+                    <fork>true</fork>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>pre-test</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>post-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
-
 
 
         </plugins>

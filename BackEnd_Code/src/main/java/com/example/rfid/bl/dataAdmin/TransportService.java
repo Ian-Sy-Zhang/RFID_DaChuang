@@ -9,7 +9,7 @@ public interface TransportService {
     //transport表的管理工作，增删改查方法
 
     // 增加Transport
-    public ResponseVO addTransport(TransportInfoVO transportInfoVO);
+    public ResponseVO addTransport(TransportVO transportVO);
 
     // 删除Transport
     public ResponseVO removeTransport(int TransportId);

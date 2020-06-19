@@ -4,9 +4,9 @@
 
     <insert id="addEquipment">
       insert into equipment
-      (id, name, ip, abs, status, connectionType)
+      (name, ip, abs, status, connectionType)
       values
-      (#{equipmentVO.id},#{equipmentVO.name},#{equipmentVO.ip},#{equipmentVO.abs},#{equipmentVO.status},#{equipmentVO.connectionType})
+      (#{equipmentVO.name},#{equipmentVO.ip},#{equipmentVO.abs},#{equipmentVO.status},#{equipmentVO.connectionType})
     </insert>
 
     <update id="updateEquipment">
@@ -14,6 +14,18 @@
       name = #{equipmentVO.name}, ip = #{equipmentVO.ip}, abs = #{equipmentVO.abs}, status = #{equipmentVO.status}, connectionType = #{equipmentVO.connectionType}
       where
       equipment.id = #{equipmentVO.id}
+    </update>
+
+    <update id="setEquipmentOnline">
+        update equipment set
+        equipment.status = 'online'
+        where equipment.id = #{id}
+    </update>
+
+    <update id="setEquipmentOffline">
+        update equipment set
+        equipment.status = 'offline'
+        where equipment.id = #{id}
     </update>
 
     <delete id="removeEquipment">
@@ -26,5 +38,9 @@
 
     <select id="searchEquipmentList" resultType="com.example.rfid.vo.EquipmentVO">
       select * from equipment
+    </select>
+
+    <select id="getEquipmentNameByIp" resultType="String">
+      select name from equipment where ip = #{ip}
     </select>
 </mapper>

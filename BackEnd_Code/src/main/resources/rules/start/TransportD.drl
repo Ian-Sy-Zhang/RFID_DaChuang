@@ -1,0 +1,19 @@
+package rules.example.rfid.vo
+import com.example.rfid.vo.TransportInfoVO
+import com.example.rfid.vo.TransportVO
+import com.example.rfid.bl.RuleEngine.RuleAction
+dialect  "java"
+global RuleAction ruleAction;
+
+rule "Transport"
+   when
+       $p : TransportInfoVO(name == "123" && num > "20" && casId == "1")
+   then
+       TransportVO transportVO = new TransportVO();
+       transportVO.setTransportId($p.getTransportId());
+       transportVO.setBatchId($p.getBatchId());
+       transportVO.setCAS_id($p.getCasId());
+       transportVO.setNum($p.getNum());
+       transportVO.setState($p.getState());
+       ruleAction.addTransport(transportVO);
+end
