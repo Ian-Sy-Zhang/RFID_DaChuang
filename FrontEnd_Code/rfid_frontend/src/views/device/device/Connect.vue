@@ -56,10 +56,21 @@ export default {
   },
   methods: {
     back () {
-      this.$router.back()
+      this.$router.push({ name: 'Device' })
     },
     saveConnectionInfo () {
-      console.log(this.connection)
+      console.log(this.$api.Connect.disConnect + this.$route.params.code)
+      this.$http.get(this.$api.Connect.connect + this.$route.params.code).then(() => {
+        this.$message({
+          type: 'success',
+          message: '成功连接!'
+        })
+        this.$store.commit('reGetList')
+        this.$router.push({ name: 'Device' })
+      })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 }
