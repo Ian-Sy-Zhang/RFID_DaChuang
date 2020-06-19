@@ -1,9 +1,9 @@
 <template>
   <div class="search">
-    <el-form :inline="true" :model="formInline" class="form-inline">
+    <el-form :inline="true" class="form-inline">
 
       <el-form-item>
-        <el-button type="success" @click="$router.push('/main/ruleEngine/DataRule/modify.vue')">新增规则</el-button>
+        <el-button type="success" @click="$router.push('/main/ruleEngine/data/add')">新增规则</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)" stripe style="width: 100%;" :highlight-current-row="true">
@@ -11,6 +11,7 @@
       <el-table-column prop="sql" label="数据过滤sql" align="center"></el-table-column>
       <el-table-column prop="condition" label="执行条件" align="center"></el-table-column>
       <el-table-column prop="action" label="执行动作" align="center"></el-table-column>
+      <el-table-column prop="state" label="状态" align="center"></el-table-column>
 
       <el-table-column label="操作" width="500" align="center">
         <template slot-scope="scope">
@@ -39,32 +40,112 @@ export default {
     return {
       tableData: [
         {
-          name: 'test',
-          sql: 'select * from 127.0.0.1',
-          condition: 'num > 20',
-          action: 'database'
         }
-      ]
+      ],
+      currentPage: 1,
+      pageSize: 5
     }
   },
   mounted () {
-
+    if (!this.$store.state.haveDataRuleList) {
+      this.initial()
+    } else {
+      this.tableData = this.$store.state.dataRuleList
+    }
   },
   methods: {
+    initial(){
+      this.$http.get(this.$api.RuleEngine.getDataRules)
+        .then(res => {
+          this.tableData = []
+          this.$store.commit('clearDataRule')
+          let counter = 1
+          for (const ele of res) {
+            const temp = {
+              id: counter,
+              name: ele.name,
+              sql: ele.sql,
+              condition: ele.condition,
+              action: ele.action,
+              state: ele.state=='start'?'运行中':'未运行'
+            }
+            counter++
+            console.log(temp)
+            this.tableData.push(temp)
+            this.$store.commit('dataRulePush', temp)
+            this.$store.commit('getDataRuleList')
+          }
+        })
+        .catch(err => {
+          this.$message.error(err.message)
+        })
+    },
     back () {
       this.$router.back()
     },
     goToModify (row) {
+      if(row.state == '运行中'){
+        alert("无法修改已启动的规则")
+        return
+      }
       this.$router.push({ name: 'ModifyDataRule', params: row })
     },
     startRule (row) {
-      this.$http.get(this.$api.RuleEngine.startDataRule, this.$data.name)
+      if(row.state == '运行中'){
+        alert("此规则已启动")
+        return
+      }
+      this.$http.get(this.$api.RuleEngine.startDataRule + row.name)
+        .then(res => {
+          alert("启动成功！")
+          this.initial()
+        })
+        .catch(err => {
+            this.$message.error(err.message)
+        })
     },
     stopRule (row) {
-      this.$http.get(this.$api.RuleEngine.stopDataRule, this.$data.name)
+      if (row.name == 'Transport'){
+        alert("此规则无法被停止")
+        return
+      }
+      if(row.state == '未运行'){
+        alert("此规则已停止")
+        return
+      }
+      this.$http.get(this.$api.RuleEngine.stopDataRule + row.name)
+        .then(res => {
+          alert("停止成功！")
+          this.initial()
+        })
+        .catch(err => {
+            this.$message.error(err.message)
+        })
     },
     removeRule (row) {
-      this.$http.get(this.$api.RuleEngine.removeDataRule, this.$data.name)
+      if (row.name == 'Transport'){
+        alert("此规则无法被删除")
+        return
+      }
+      if(row.state == '运行中'){
+        alert("无法删除正在运行的规则")
+        return
+      }
+      this.$http.get(this.$api.RuleEngine.removeDataRule + row.name)
+        .then(res => {
+            alert("删除成功！")
+            this.initial()
+        })
+        .catch(err => {
+            this.$message.error(err.message)
+        })
+    },
+    pageChange (currentPage) {
+      console.log('当前页：', currentPage)
+      this.currentPage = currentPage
+    },
+    pageSizeChange (pageSize) {
+      this.pageSize = pageSize
     }
   }
 }

@@ -31,7 +31,6 @@
               <i class="iconfont icon-equipment-set"></i>规则引擎</template>
             <el-menu-item index="4-1" route="/main/ruleEngine/data">数据转发</el-menu-item>
             <el-menu-item index="4-2" route="/main/ruleEngine/equipment">设备联动</el-menu-item>
-            <el-menu-item index="4-3" route="/main/ruleEngine/data/modify">设备联动</el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>

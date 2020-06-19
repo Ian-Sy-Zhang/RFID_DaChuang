@@ -162,6 +162,7 @@ public class RuleEngineImpl implements RuleEngine {
                 }
             }
         }
+        if(selected.length()!=0)
         selected.delete(selected.length()-1,selected.length());
         sql.append(selected);
         sql.append(" from ").append(ip);
@@ -332,6 +333,7 @@ public class RuleEngineImpl implements RuleEngine {
         }
         else{
             //添加条件
+            if(!sqlOrIp.equals(""))
             when.append("ip == \"").append(sqlOrIp).append("\"");
             hasCondition = true;
         }
@@ -350,7 +352,7 @@ public class RuleEngineImpl implements RuleEngine {
     private StringBuilder generateAction(String sqlOrIp, String action){
         StringBuilder then = new StringBuilder("    then" + System.getProperty("line.separator"));
         if(action.equals("")){
-            then.append("        ruleAction.doNorhing();").append(System.getProperty("line.separator"));
+            then.append("        ruleAction.doNothing();").append(System.getProperty("line.separator"));
         }
         else{
             then.append("        TransportVO transportVO = new TransportVO();").append(System.getProperty("line.separator"));

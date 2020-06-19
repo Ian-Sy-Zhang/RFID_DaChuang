@@ -25,7 +25,7 @@ public class RuleActionImpl implements RuleAction {
     @Override
     public void alert(TransportVO transportVO) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/RFID/alert";
+        String url = "http://localhost:8888/RFID/alert";
         String response = restTemplate.postForObject(url,transportVO,String.class);
         System.out.println(response);
     }
@@ -33,7 +33,7 @@ public class RuleActionImpl implements RuleAction {
     @Override
     public void log(TransportVO transportVO) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/RFID/log";
+        String url = "http://localhost:8888/RFID/log";
         String response = restTemplate.postForObject(url,transportVO,String.class);
         System.out.println(response);
     }
@@ -46,7 +46,7 @@ public class RuleActionImpl implements RuleAction {
     @Override
     public void reScan(TransportInfoVO transportInfoVO) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/RFID/reScan";
+        String url = "http://localhost:8888/RFID/reScan";
         String response = restTemplate.postForObject(url,transportInfoVO,String.class);
         System.out.println(response);
     }
@@ -54,7 +54,7 @@ public class RuleActionImpl implements RuleAction {
     @Override
     public void shutDown(TransportInfoVO transportInfoVO) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/RFID/shutDown";
+        String url = "http://localhost:8888/RFID/shutDown";
         String response = restTemplate.postForObject(url,transportInfoVO,String.class);
         System.out.println(response);
     }

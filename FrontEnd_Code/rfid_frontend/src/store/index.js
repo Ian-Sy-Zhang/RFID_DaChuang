@@ -7,7 +7,11 @@ export const deviceList = state => state.deviceList
 export default new Vuex.Store({
   state: {
     deviceList: [],
-    haveDeviceList: false
+    haveDeviceList: false,
+    dataRuleList: [],
+    haveDataRuleList: false,
+    equipmentRuleList: [],
+    haveEquipmentRuleList: false
   },
   mutations: {
     devicePush (state, element) {
@@ -15,6 +19,24 @@ export default new Vuex.Store({
     },
     getList (state) {
       state.haveDeviceList = true
+    },
+    dataRulePush (state, element){
+      state.dataRuleList.push(element)
+    },
+    getDataRuleList (state) {
+      state.haveDataRuleList = true
+    },
+    clearDataRule(state){
+      state.dataRuleList = []
+    },
+    equipmentRulePush (state, element){
+      state.equipmentRuleList.push(element)
+    },
+    getEquipmentRuleList (state) {
+      state.haveEquipmentRuleList = true
+    },
+    clearEquipmentRule(state){
+      state.equipmentRuleList = []
     }
   },
   actions: {

@@ -10,14 +10,18 @@ export default {
   },
 
   RuleEngine:{
-    addDataRule: baseUrl + '',
-    removeDataRule: baseUrl + '',
-    modifyDataRule: baseUrl + '',
-    getDataRules: baseUrl + '',
-    addEquipmentRule: baseUrl + '',
-    removeEquipmentRule: baseUrl + '',
-    modifyEquipmentRule: baseUrl + '',
-    getEquipmentRules: baseUrl + '',
+    addDataRule: baseUrl + '/ruleEngine/addDataRule',
+    removeDataRule: baseUrl + '/ruleEngine/removeDataRule/',
+    modifyDataRule: baseUrl + '/ruleEngine/modifyDataRule',
+    getDataRules: baseUrl + '/ruleEngine/getDataRules',
+    startDataRule: baseUrl + '/ruleEngine/startDataRule/',
+    stopDataRule: baseUrl + '/ruleEngine/stopDataRule/',
+    addEquipmentRule: baseUrl + '/ruleEngine/addEquipmentRule',
+    removeEquipmentRule: baseUrl + '/ruleEngine/removeEquipmentRule/',
+    modifyEquipmentRule: baseUrl + '/ruleEngine/modifyEquipmentRule',
+    getEquipmentRules: baseUrl + '/ruleEngine/getEquipmentRules',
+    startEquipmentRule: baseUrl + '/ruleEngine/startEquipmentRule/',
+    stopEquipmentRule: baseUrl + '/ruleEngine/stopEquipmentRule/',
   }
 
 }

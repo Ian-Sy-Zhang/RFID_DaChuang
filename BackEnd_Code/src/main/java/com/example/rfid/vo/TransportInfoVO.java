@@ -17,6 +17,15 @@ public class TransportInfoVO {
     public TransportInfoVO() {
     }
 
+    public TransportInfoVO(String name, String ip, int casId, int batchId, int num, int state) {
+        this.name = name;
+        this.ip = ip;
+        this.casId = casId;
+        this.batchId = batchId;
+        this.num = num;
+        this.state = state;
+    }
+
     public TransportInfoVO(String name, String ip, int transportId, int casId, int batchId, int num, int state) {
         this.name = name;
         this.ip = ip;
