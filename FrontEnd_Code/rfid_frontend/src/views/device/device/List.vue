@@ -20,8 +20,10 @@
             <i class="iconfont icon-details"></i>查看</el-button>
           <el-button @click="handleDelete(scope.row)" type="text" size="small">
             <i class="iconfont icon-delete"></i>删除</el-button>
-          <el-button @click="connect(scope.row)" type="text" size="small">
+          <el-button v-if="scope.row.status==='offline'" @click="connect(scope.row)" type="text" size="small">
             <i class="iconfont icon-delete"></i>连接</el-button>
+          <el-button v-else  type="text" @click="disconnect(scope.row)" size="small">
+            <i class="iconfont icon-delete"></i>断开</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -37,15 +39,16 @@ export default {
   data () {
     return {
       tableData: [
-        {
-          id: 2,
-          name: 'test1',
-          code: 'qwwwq',
-          pubNetAddr: '222.222.333.222',
-          model: 'ww-1s',
-          status: 'online',
-          type: 'http'
-        }
+        // {
+        //   id: 2,
+        //   name: 'test1',
+        //   code: 'qwwwq',
+        //   pubNetAddr: '222.222.333.222',
+        //   model: 'ww-1s',
+        //   status: 'online',
+        //   type: 'http',
+        //   connected: this.status === 'online'
+        // }
       ],
       currentPage: 1,
       pageSize: 5,
@@ -71,11 +74,10 @@ export default {
               abs: ele.abs
             }
             counter++
-            console.log(temp)
             this.tableData.push(temp)
             this.$store.commit('devicePush', temp)
-            this.$store.commit('getList')
           }
+          this.$store.commit('getList')
         })
         .catch(err => {
           this.$message.error(err.message)
@@ -99,11 +101,10 @@ export default {
               type: 'success',
               message: '删除成功!'
             })
-            console.log(res)
             this.$store.commit('removeDevice', row.id - 1)
-            console.log(this.tableData)
             delete this.tableData[row.id - 1]
-            console.log(this.tableData)
+            this.$store.commit('freshDeviceList', this.tableData)
+
             this.tableShow = false
             this.$nextTick(() => {
               this.tableShow = true
@@ -112,19 +113,6 @@ export default {
             .catch(err => {
               this.$message.error(err.message)
             })
-          // deleteDeviceById(row.id)
-          //   .then(res => {
-          //     this.$message({
-          //       type: 'success',
-          //       message: '删除成功!'
-          //     })
-          //     this.tableData = this.tableData.filter(
-          //       item => item.id !== row.id
-          //     )
-          //   })
-          //   .catch(err => {
-          //     this.$message.error(err.message)
-          //   })
         })
         .catch(err => {
           console.log(err)
@@ -132,6 +120,24 @@ export default {
     },
     connect (row) {
       this.$router.push({ name: 'DeviceConnect', params: row })
+    },
+    disconnect (row) {
+      console.log(this.$api.Connect.disConnect + row.code)
+      this.$http.get(this.$api.Connect.disConnect + row.code).then(() => {
+        this.$message({
+          type: 'success',
+          message: '成功断开连接!'
+        })
+        this.tableData[row.id - 1].status = 'offline'
+        this.$store.commit('freshDeviceList', this.tableData)
+        this.tableShow = false
+        this.$nextTick(() => {
+          this.tableShow = true
+        })
+      })
+        .catch(err => {
+          console.log(err)
+        })
     },
     goToArgs (row) {
       this.$router.push({ name: 'DevArgList', params: row })
