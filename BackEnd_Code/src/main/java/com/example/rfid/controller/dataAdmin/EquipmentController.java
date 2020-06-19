@@ -29,6 +29,16 @@ public class EquipmentController {
         return equipmentService.updateEquipment(equipmentVO);
     }
 
+    @GetMapping("/setEquipmentOnline/{id}")
+    public ResponseVO setEquipmentOnline(@PathVariable int id){
+        return equipmentService.setEquipmentOnline(id);
+    }
+
+    @GetMapping("/setEquipmentOffline/{id}")
+    public ResponseVO setEquipmentOffline(@PathVariable int id){
+        return equipmentService.setEquipmentOffline(id);
+    }
+
     @GetMapping("/searchOneEquipment/{id}")
     public ResponseVO searchOneEquipment(@PathVariable int id){
         return equipmentService.searchOneEquipment(id);

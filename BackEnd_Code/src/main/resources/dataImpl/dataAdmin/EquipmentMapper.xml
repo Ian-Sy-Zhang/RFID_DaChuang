@@ -16,6 +16,18 @@
       equipment.id = #{equipmentVO.id}
     </update>
 
+    <update id="setEquipmentOnline">
+        update equipment set
+        equipment.status = 'online'
+        where equipment.id = #{id}
+    </update>
+
+    <update id="setEquipmentOffline">
+        update equipment set
+        equipment.status = 'offline'
+        where equipment.id = #{id}
+    </update>
+
     <delete id="removeEquipment">
       delete from equipment where equipment.id = #{id}
     </delete>
