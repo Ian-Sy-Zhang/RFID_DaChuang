@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/ruleEngine")
 public class RuleEngineController {
-/*
+
     @Autowired
     RuleEngine ruleEngine;
 
@@ -179,5 +179,4 @@ public class RuleEngineController {
             return ResponseVO.buildFailure("执行规则失败");
         }
     }
-*/
 }

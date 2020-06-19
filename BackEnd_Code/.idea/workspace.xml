@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82b0d64a-7bc3-42b1-b7e4-81cc227a3059" name="Default Changelist" comment="开发">
-      <change beforePath="$PROJECT_DIR$/../.idea/RFID_DaChuang.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/RFID_DaChuang.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/Connection/ConnectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/bl/Connection/ConnectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/deviceConnection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/deviceConnection/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/config/InterceptorConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/config/InterceptorConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/RuleEngine/RuleEngineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/RuleEngine/RuleEngineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/DataRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/vo/DataRule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
