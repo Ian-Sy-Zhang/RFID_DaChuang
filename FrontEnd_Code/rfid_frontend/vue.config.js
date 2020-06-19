@@ -1,4 +1,5 @@
 module.exports = {
+  lintOnSave: false,
   outputDir: process.env.outputDir,
   devServer: {
     // 所有的接口请求代理

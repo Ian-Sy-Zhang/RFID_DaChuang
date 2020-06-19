@@ -11,9 +11,14 @@
       <el-aside width="200px" style="background-color: rgb(238, 241, 246);height:100%;">
         <el-menu :router="true" :default-active="defaultActive" :unique-opened="true">
           <el-submenu index="1">
+          <template slot="title">
+              <i class="iconfont icon-setting"></i>数据分析</template>
+            <el-menu-item index="1-1" route="/main/analysis">列表数据</el-menu-item>
+          </el-submenu>
+          <el-submenu index="1">
             <template slot="title">
               <i class="iconfont icon-setting"></i>系统设置</template>
-            <el-menu-item index="1-1" route="/main/user">用户管理</el-menu-item>
+            <el-menu-item index="2-1" route="/main/user">用户管理</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
