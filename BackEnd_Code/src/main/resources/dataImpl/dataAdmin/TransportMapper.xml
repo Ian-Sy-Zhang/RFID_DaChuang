@@ -3,8 +3,8 @@
 <mapper namespace="com.example.rfid.data.dataAdmin.TransportMapper">
 
     <insert id="addTransInfo">
-        insert into transport (TransportId, CAS_id, batchId, Num, State)
-        values (#{transportVO.TransportId},#{transportVO.CAS_id},#{transportVO.batchId},#{transportVO.num},#{transportVO.State})
+        insert into transport (CAS_id, batchId, Num, State)
+        values (#{transportVO.CAS_id},#{transportVO.batchId},#{transportVO.num},#{transportVO.State})
     </insert>
 
     <delete id="removeTransport">

@@ -17,6 +17,12 @@ public interface EquipmentService {
     // 修改equipment
     public ResponseVO updateEquipment(EquipmentVO equipmentVO);
 
+    // 将指定id的设备的status设置为online
+    public ResponseVO setEquipmentOnline(int id);
+
+    // 将指定id的设备的status设置为offline
+    public ResponseVO setEquipmentOffline(int id);
+
     // 查询一条equipment信息
     public ResponseVO searchOneEquipment(int id);
 
