@@ -3,58 +3,75 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/main',
-    name: '',
-    meta: {
-      nav: '',
-      activeItem: '1-1'
-    },
-    component: () => import('../views/Main'),
-    children: [
-      {
-        path: 'device',
-        component: () => import('../views/device/device/List.vue'),
-        name: 'Device',
+const routes = [{
+        path: '/main',
+        name: '',
         meta: {
-          nav: '设备列表',
-          activeItem: '3-1'
-        }
-      }, {
-        path: 'device/edit/:devId?',
-        component: () => import('../views/device/device/Edit.vue'),
-        name: 'DeviceEdit',
-        meta: {
-          nav: '设备编辑',
-          activeItem: '3-1'
-        }
-      }, {
-        path: 'device/connect/:devId?',
-        component: () => import('../views/device/device/Connect.vue'),
-        name: 'DeviceConnect',
-        meta: {
-          nav: '设备链接',
-          activeItem: '3-1'
-        }
-      },
-      {
-        path: 'device/arg',
-        name: 'DevArgList',
-        component: () => import('../views/device/devArg/List.vue'),
-        meta: {
-          nav: '设备参数',
-          activeItem: '3-3'
-        }
-      }
+            nav: '',
+            activeItem: '1-1'
+        },
+        component: () =>
+            import ('../views/Main'),
+        children: [{
+                path: 'device',
+                component: () =>
+                    import ('../views/device/device/List.vue'),
+                name: 'Device',
+                meta: {
+                    nav: '设备列表',
+                    activeItem: '3-1'
+                }
+            }, {
+                path: 'device/edit/:devId?',
+                component: () =>
+                    import ('../views/device/device/Edit.vue'),
+                name: 'DeviceEdit',
+                meta: {
+                    nav: '设备编辑',
+                    activeItem: '3-1'
+                }
+            }, {
+                path: 'device/connect/:devId?',
+                component: () =>
+                    import ('../views/device/device/Connect.vue'),
+                name: 'DeviceConnect',
+                meta: {
+                    nav: '设备链接',
+                    activeItem: '3-1'
+                }
+            },
+            {
+                path: 'device/arg',
+                name: 'DevArgList',
+                component: () =>
+                    import ('../views/device/devArg/List.vue'),
+                meta: {
+                    nav: '设备参数',
+                    activeItem: '3-3'
+                }
+            },
+            {
+                path: 'analysis',
+                name: 'Analysis',
+                component: () =>
+                    import ('../views/analysis/Analysis.vue'),
+                meta: {
+                    nav: '数据分析',
+                    activeItem: '1-1'
+                }
+            },
+            {
+                path: '/',
+                redirect: 'analysis'
+            }
 
-    ]
-  }
+        ]
+    }
 
 ]
 
 const router = new VueRouter({
-  routes
+    routes
 })
 
 export default router
