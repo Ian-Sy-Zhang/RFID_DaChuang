@@ -67,10 +67,10 @@ const routes = [
       },
       {
         path: 'ruleEngine/data/modify',
-        name: 'DataRule',
+        name: 'ModifyDataRule',
         component: () => import('../views/ruleEngine/DataRule/modify.vue'),
         meta: {
-          nav: '数据转发',
+          nav: '修改数据转发规则',
           activeItem: '4-1'
         }
       }

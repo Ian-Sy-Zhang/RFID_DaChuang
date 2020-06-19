@@ -6,6 +6,10 @@ import com.example.rfid.vo.TransportInfoVO;
 import com.example.rfid.vo.TransportVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class RuleActionImpl implements RuleAction {
@@ -20,12 +24,18 @@ public class RuleActionImpl implements RuleAction {
 
     @Override
     public void alert(TransportVO transportVO) {
-        System.out.println("alert");
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8080/RFID/alert";
+        String response = restTemplate.postForObject(url,transportVO,String.class);
+        System.out.println(response);
     }
 
     @Override
     public void log(TransportVO transportVO) {
-        System.out.println("log");
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8080/RFID/log";
+        String response = restTemplate.postForObject(url,transportVO,String.class);
+        System.out.println(response);
     }
 
     @Override
@@ -35,11 +45,17 @@ public class RuleActionImpl implements RuleAction {
 
     @Override
     public void reScan(TransportInfoVO transportInfoVO) {
-        System.out.println("machine "+transportInfoVO.getIp()+" is rescanning.");
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8080/RFID/reScan";
+        String response = restTemplate.postForObject(url,transportInfoVO,String.class);
+        System.out.println(response);
     }
 
     @Override
     public void shutDown(TransportInfoVO transportInfoVO) {
-        System.out.println("machine "+transportInfoVO.getIp()+" is shutting down.");
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8080/RFID/shutDown";
+        String response = restTemplate.postForObject(url,transportInfoVO,String.class);
+        System.out.println(response);
     }
 }

@@ -6,6 +6,8 @@ import com.example.rfid.bl.dataAdmin.EquipmentService;
 import com.example.rfid.vo.DataRule;
 import com.example.rfid.vo.EquipmentRule;
 import com.example.rfid.vo.TransportInfoVO;
+import org.kie.api.KieBase;
+import org.kie.api.runtime.Globals;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,9 @@ public class RuleEngineImpl implements RuleEngine {
 
     @Autowired
     private KieSession session;
+
+    @Autowired
+    private KieBase kieBase;
 
     @Autowired
     private RuleAction ruleAction;

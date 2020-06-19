@@ -174,6 +174,7 @@ public class RuleEngineController {
             return ResponseVO.buildSuccess();
         }
         catch (Exception e){
+            e.printStackTrace();
             return ResponseVO.buildFailure("执行规则失败");
         }
     }

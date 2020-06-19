@@ -7,7 +7,7 @@ global RuleAction ruleAction;
 
 rule "Transport"
    when
-       $p : TransportInfoVO(name == "123" && num > "20" && casId == "1")
+       $p : TransportInfoVO()
    then
        TransportVO transportVO = new TransportVO();
        transportVO.setTransportId($p.getTransportId());
