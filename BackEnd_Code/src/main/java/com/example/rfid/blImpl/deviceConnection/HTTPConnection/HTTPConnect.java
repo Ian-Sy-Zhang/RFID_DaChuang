@@ -13,6 +13,8 @@ public class HTTPConnect {
         this.httpurl = httpurl;
     }
 
+    public HttpURLConnection getConnect(){return connection;}
+
     public HttpURLConnection connect(){
         try {
             // 创建远程url连接对象

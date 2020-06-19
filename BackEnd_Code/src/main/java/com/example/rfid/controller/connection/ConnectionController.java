@@ -7,13 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/Connection")
+@RequestMapping("/deviceConnection")
 public class ConnectionController {
 
     @Autowired
     ConnectionService connectionService;
-
-
 
     @GetMapping("/connect/{id}")
     public ResponseVO connect(@PathVariable int id){

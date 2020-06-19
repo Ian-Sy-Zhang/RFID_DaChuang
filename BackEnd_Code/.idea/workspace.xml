@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82b0d64a-7bc3-42b1-b7e4-81cc227a3059" name="Default Changelist" comment="开发">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/RuleEngine/RuleEngineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/RuleEngine/RuleEngineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/deviceConnection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/deviceConnection/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/deviceConnection/HTTPConnection/HTTPConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/blImpl/deviceConnection/HTTPConnection/HTTPConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/config/InterceptorConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/config/InterceptorConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/connection/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rfid/controller/connection/ConnectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,29 +378,30 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="487" y="113" width="1372" height="912" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1591454569311" />
-    <state x="901" y="320" key="FileChooserDialogImpl" timestamp="1591501733217">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="660" y="276" key="FileChooserDialogImpl" timestamp="1592561282993">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state x="660" y="276" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1592561282993" />
     <state x="901" y="320" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1591501733217" />
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1592560491652">
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1592568663764">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1592560491652" />
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1592568663764" />
     <state width="1091" height="414" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1592560491651">
+    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1592568663764">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1592560491651" />
+    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1592568663764" />
     <state width="1091" height="414" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
-    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1592560491651">
+    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1592568663764">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1592560491651" />
+    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1592568663764" />
     <state width="1091" height="414" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291649" />
-    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1592560491652">
+    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1592568663764">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1592560491652" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1592568663764" />
     <state width="1091" height="414" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1592288291650" />
     <state width="1091" height="414" key="GridCell.Tab.1.bottom" timestamp="1592288291650">
       <screen x="0" y="0" width="2048" height="1112" />

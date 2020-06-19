@@ -9,12 +9,16 @@ import com.example.rfid.po.MqttConfiguration;
 import com.example.rfid.vo.EquipmentVO;
 import com.example.rfid.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Map;
 
 @Service
+@Component
 public class Connection implements ConnectionService {
     @Autowired
     EquipmentService equipmentService;
@@ -24,6 +28,9 @@ public class Connection implements ConnectionService {
     @Override
     public ResponseVO connect(int id) {
         ResponseVO temp = equipmentService.searchOneEquipment(id);
+        if(temp.getContent()==null){
+            return ResponseVO.buildSuccess(false);
+        }
         EquipmentVO mes = (EquipmentVO) temp.getContent();
         if(mes.getConnectionType()=="http")
         {
@@ -40,7 +47,7 @@ public class Connection implements ConnectionService {
             }
         }
         else{
-            if(mqttConnection.getClient().isConnected()!=true){
+            if(mqttConnection.getClient()==null){
                 MqttConfiguration mqttConfiguration = new MqttConfiguration();
                 mqttConfiguration.setHost("192.168.1.1");
                 mqttConfiguration.setUsername("Admin");
@@ -50,8 +57,8 @@ public class Connection implements ConnectionService {
                 mqttConfiguration.setQos(new int[]{1});
                 mqttConfiguration.setTopic(new String[]{"equitment"+id});
                 mqttConnection.connect(mqttConfiguration);
-                if(mqttConnection.getClient().isConnected()==false){
-                    return ResponseVO.buildSuccess(true);
+                if(mqttConnection.getClient()==null||mqttConnection.getClient().isConnected()==false){
+                    return ResponseVO.buildSuccess(false);
                 }
             }
             else{
@@ -64,17 +71,70 @@ public class Connection implements ConnectionService {
     @Override
     public ResponseVO close(int id){
         ResponseVO temp = equipmentService.searchOneEquipment(id);
+        if(temp.getContent()==null){
+            return ResponseVO.buildSuccess(false);
+        }
         EquipmentVO mes = (EquipmentVO) temp.getContent();
         if(mes.getConnectionType()=="http"){
-            HTTPConnect httpConnect = httpConnects.get(id);
-            httpConnect.closeConnect();
-            httpConnects.remove(id);
-            return ResponseVO.buildSuccess(true);
+            if(httpConnects.containsKey(id)) {
+                HTTPConnect httpConnect = httpConnects.get(id);
+                httpConnect.closeConnect();
+                httpConnects.remove(id);
+                return ResponseVO.buildSuccess(true);
+            }
+            else
+                return ResponseVO.buildSuccess(false);
         }
         else{
             MqttRecieveClient mqttRecieveClient = new MqttRecieveClient(mqttConnection);
             mqttRecieveClient.cleanTopic("equitment"+id);
             return ResponseVO.buildSuccess(true);
+        }
+    }
+
+
+    @Scheduled(fixedRate = 2000)
+    public void testMqtt() throws Exception {
+        if(mqttConnection!=null&&mqttConnection.getClient()!=null) {
+            if (mqttConnection.getClient().isConnected() == false) {
+                mqttConnection.reConnect();
+            }
+
+            if (mqttConnection.getClient().isConnected() == false) {
+                System.out.println("something error with mqttServer");
+            }
+        }
+    }
+
+
+    @Scheduled(fixedRate = 2000)
+    public void testHttp(){
+        if(httpConnects!=null) {
+            try {
+                for (HTTPConnect temp : httpConnects.values()) {
+                    if (temp.getConnect().getResponseCode() != 200) {
+                        temp.connect();
+                    }
+                    if (temp.getConnect().getResponseCode() != 200) {
+                        System.out.println("something error with http");
+                        int id = 0;
+                        Iterator it = httpConnects.entrySet().iterator();
+                        while (it.hasNext()) {
+                            Map.Entry entry = (Map.Entry) it.next();
+                            Object obj = entry.getValue();
+                            if (obj != null && obj.equals(temp)) {
+
+                                id = (int) entry.getKey();
+
+                            }
+                        }
+
+                        equipmentService.setEquipmentOffline(id);
+                    }
+                }
+            } catch (IOException exception) {
+                System.out.println("IO ERROR");
+            }
         }
     }
 }
