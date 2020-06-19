@@ -39,16 +39,16 @@ export default {
   data () {
     return {
       tableData: [
-        {
-          id: 2,
-          name: 'test1',
-          code: 'qwwwq',
-          pubNetAddr: '222.222.333.222',
-          model: 'ww-1s',
-          status: 'online',
-          type: 'http',
-          connected: this.status === 'online'
-        }
+        // {
+        //   id: 2,
+        //   name: 'test1',
+        //   code: 'qwwwq',
+        //   pubNetAddr: '222.222.333.222',
+        //   model: 'ww-1s',
+        //   status: 'online',
+        //   type: 'http',
+        //   connected: this.status === 'online'
+        // }
       ],
       currentPage: 1,
       pageSize: 5,
@@ -103,6 +103,8 @@ export default {
             })
             this.$store.commit('removeDevice', row.id - 1)
             delete this.tableData[row.id - 1]
+            this.$store.commit('freshDeviceList', this.tableData)
+
             this.tableShow = false
             this.$nextTick(() => {
               this.tableShow = true
@@ -120,7 +122,22 @@ export default {
       this.$router.push({ name: 'DeviceConnect', params: row })
     },
     disconnect (row) {
-      console.log(row)
+      console.log(this.$api.Connect.disConnect + row.code)
+      this.$http.get(this.$api.Connect.disConnect + row.code).then(() => {
+        this.$message({
+          type: 'success',
+          message: '成功断开连接!'
+        })
+        this.tableData[row.id - 1].status = 'offline'
+        this.$store.commit('freshDeviceList', this.tableData)
+        this.tableShow = false
+        this.$nextTick(() => {
+          this.tableShow = true
+        })
+      })
+        .catch(err => {
+          console.log(err)
+        })
     },
     goToArgs (row) {
       this.$router.push({ name: 'DevArgList', params: row })

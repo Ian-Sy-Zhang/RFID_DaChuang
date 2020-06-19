@@ -21,8 +21,10 @@ export default new Vuex.Store({
       state.deviceList = []
     },
     removeDevice (state, deviceIndex) {
-      console.log(deviceIndex)
       delete state.deviceList[deviceIndex]
+    },
+    freshDeviceList (state, deviceList) {
+      state.deviceList = deviceList
     }
   },
   actions: {

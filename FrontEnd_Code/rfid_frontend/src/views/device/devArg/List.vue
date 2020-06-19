@@ -48,7 +48,6 @@ export default {
   },
   mounted () {
     let row = this.$route.params
-    console.log(row.deviceIndex)
     this.currentDevArg.device.id = row.id
     this.currentDevArg.device.name = row.name
     row = this.$store.state.deviceList[row.id - 1]
@@ -75,9 +74,6 @@ export default {
           name: ''
         }
       }
-    },
-    addLocalData (newData) {
-      this.tableData.push(newData)
     }
   }
 }
