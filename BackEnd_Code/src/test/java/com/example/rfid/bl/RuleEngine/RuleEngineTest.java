@@ -93,8 +93,10 @@ public class RuleEngineTest {
 
     @Test
     public void fireRules() {
-        List<TransportInfoVO> list = new ArrayList<>();
-        list.add(new TransportInfoVO("123","192.168.1.1",0,1,0,50,1));
+//        List<TransportInfoVO> list = new ArrayList<>();
+//        list.add(new TransportInfoVO("123","192.168.1.1",0,1,0,50,1));
+        List<TransportInfoVO> list  = new ArrayList<>();
+        list.add(new TransportInfoVO("110","192.168.1.1",5,0,20,30,1));
         ruleEngine.fireRules(list);
 
     }

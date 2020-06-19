@@ -27,6 +27,7 @@ public class RuleEngineController {
             return ResponseVO.buildSuccess(ruleEngine.getDataRules());
         }
         catch (Exception e){
+            e.printStackTrace();
             return ResponseVO.buildFailure("数据转发规则获取失败");
         }
     }
@@ -67,6 +68,7 @@ public class RuleEngineController {
             return ResponseVO.buildSuccess();
         }
         catch (Exception e){
+            e.printStackTrace();
             return ResponseVO.buildFailure("添加设备联动规则失败");
         }
     }
@@ -176,6 +178,7 @@ public class RuleEngineController {
             return ResponseVO.buildSuccess();
         }
         catch (Exception e){
+            e.printStackTrace();
             return ResponseVO.buildFailure("执行规则失败");
         }
     }

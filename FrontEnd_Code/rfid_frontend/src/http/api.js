@@ -13,6 +13,21 @@ export default {
     connect: baseUrl + '/dataAdmin/Equipment/setEquipmentOnline/',
     // 后加device id
     disConnect: baseUrl + '/dataAdmin/Equipment/setEquipmentOffline/'
+  },
+
+  RuleEngine:{
+    addDataRule: baseUrl + '/ruleEngine/addDataRule',
+    removeDataRule: baseUrl + '/ruleEngine/removeDataRule/',
+    modifyDataRule: baseUrl + '/ruleEngine/modifyDataRule',
+    getDataRules: baseUrl + '/ruleEngine/getDataRules',
+    startDataRule: baseUrl + '/ruleEngine/startDataRule/',
+    stopDataRule: baseUrl + '/ruleEngine/stopDataRule/',
+    addEquipmentRule: baseUrl + '/ruleEngine/addEquipmentRule',
+    removeEquipmentRule: baseUrl + '/ruleEngine/removeEquipmentRule/',
+    modifyEquipmentRule: baseUrl + '/ruleEngine/modifyEquipmentRule',
+    getEquipmentRules: baseUrl + '/ruleEngine/getEquipmentRules',
+    startEquipmentRule: baseUrl + '/ruleEngine/startEquipmentRule/',
+    stopEquipmentRule: baseUrl + '/ruleEngine/stopEquipmentRule/',
   }
 
 }
