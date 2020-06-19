@@ -15,6 +15,10 @@ export default new Vuex.Store({
     },
     getList (state) {
       state.haveDeviceList = true
+    },
+    removeDevice (state, deviceIndex) {
+      console.log(deviceIndex)
+      delete state.deviceList[deviceIndex]
     }
   },
   actions: {

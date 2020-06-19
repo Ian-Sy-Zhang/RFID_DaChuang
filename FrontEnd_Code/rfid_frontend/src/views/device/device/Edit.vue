@@ -77,7 +77,9 @@ export default {
         status: this.device.status,
         connectionType: this.device.connection
       }
-      this.$http.post(this.$api.Device.addDevice, newDevice)
+      this.$http.post(this.$api.Device.addDevice, newDevice).then(
+
+      )
     },
     clearForm (form) {
       this.device.args = this.device.args.map(item => {

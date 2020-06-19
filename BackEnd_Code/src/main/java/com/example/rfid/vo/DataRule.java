@@ -27,4 +27,5 @@ public class DataRule {
         this.action = action;
         this.state = state;
     }
+
 }

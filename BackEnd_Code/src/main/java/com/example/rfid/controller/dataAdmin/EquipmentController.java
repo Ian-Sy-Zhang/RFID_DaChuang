@@ -15,7 +15,6 @@ public class EquipmentController {
 
     @PostMapping("/addEquipment")
     public ResponseVO addEquipment(@RequestBody EquipmentVO equipmentVO){
-        System.out.println(equipmentVO.toString());
         return equipmentService.addEquipment(equipmentVO);
     }
 
@@ -46,7 +45,6 @@ public class EquipmentController {
 
     @RequestMapping("/searchEquipmentList")
     public ResponseVO searchEquipmentList(){
-        System.out.println("123");
         return equipmentService.searchEquipmentList();
     }
 

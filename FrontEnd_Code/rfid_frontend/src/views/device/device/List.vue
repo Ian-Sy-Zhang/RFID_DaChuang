@@ -1,12 +1,11 @@
 <template>
   <div class="search">
-    <el-form :inline="true" :model="formInline" class="form-inline">
-
+    <el-form :inline="true" class="form-inline">
       <el-form-item>
         <el-button type="success" @click="$router.push('/main/device/edit')">新增设备</el-button>
       </el-form-item>
     </el-form>
-    <el-table :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)" stripe style="width: 100%;" :highlight-current-row="true">
+    <el-table v-if="tableShow" :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)" stripe style="width: 100%;" :highlight-current-row="true">
       <el-table-column prop="id" label="编号" sortable align="center"></el-table-column>
       <el-table-column prop="name" label="设备名称" align="center"></el-table-column>
       <el-table-column prop="code" label="设备编号" align="center"></el-table-column>
@@ -33,7 +32,6 @@
 </template>
 
 <script>
-// import { getDeviceList, deleteDeviceById } from '../../http/device'
 export default {
   name: 'DeviceList',
   data () {
@@ -50,7 +48,8 @@ export default {
         }
       ],
       currentPage: 1,
-      pageSize: 5
+      pageSize: 5,
+      tableShow: true
     }
   },
   mounted () {
@@ -86,14 +85,6 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      const keys = Object.keys(this.formInline)
-      const query = {}
-      keys.forEach(key => {
-        this.formInline[key] &&
-          (query[key] = (this.formInline[key] + '').trim())
-      })
-    },
     handleDelete (row) { // 删除
       console.log('row:', row)
       this.$confirm('此操作将永久删除该设备, 是否继续?', '提示', {
@@ -102,6 +93,25 @@ export default {
         type: 'warning'
       })
         .then(() => {
+          console.log(this.$api.Device.removeDevice + row.code)
+          this.$http.get(this.$api.Device.removeDevice + row.code).then(res => {
+            this.$message({
+              type: 'success',
+              message: '删除成功!'
+            })
+            console.log(res)
+            this.$store.commit('removeDevice', row.id - 1)
+            console.log(this.tableData)
+            delete this.tableData[row.id - 1]
+            console.log(this.tableData)
+            this.tableShow = false
+            this.$nextTick(() => {
+              this.tableShow = true
+            })
+          })
+            .catch(err => {
+              this.$message.error(err.message)
+            })
           // deleteDeviceById(row.id)
           //   .then(res => {
           //     this.$message({
