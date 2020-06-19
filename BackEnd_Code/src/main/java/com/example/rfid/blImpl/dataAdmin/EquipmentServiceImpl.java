@@ -44,6 +44,24 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
+    public ResponseVO setEquipmentOnline(int id) {
+        try {
+            return ResponseVO.buildSuccess(equipmentMapper.setEquipmentOnline(id));
+        }catch (Exception e){
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
+    @Override
+    public ResponseVO setEquipmentOffline(int id) {
+        try {
+            return ResponseVO.buildSuccess(equipmentMapper.setEquipmentOffline(id));
+        }catch (Exception e){
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
+    @Override
     public ResponseVO searchOneEquipment(int id) {
         try {
             return ResponseVO.buildSuccess(equipmentMapper.searchEquipment(id));

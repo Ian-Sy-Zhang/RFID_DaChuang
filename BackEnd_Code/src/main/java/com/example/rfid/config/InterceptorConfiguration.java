@@ -12,6 +12,6 @@ public class InterceptorConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new SessionInterceptor()).excludePathPatterns("**","/dataAnalysis/**","/dataAdmin/**","/ruleEngine/**").addPathPatterns("/**");
+        registry.addInterceptor(new SessionInterceptor()).excludePathPatterns("**","/deviceConnection/**","/dataAnalysis/**","/dataAdmin/**","/ruleEngine/**").addPathPatterns("/**");
     }
 }

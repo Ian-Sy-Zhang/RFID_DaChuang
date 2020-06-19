@@ -8,6 +8,12 @@ export default {
     // 后加device id
     removeDevice: baseUrl + '/dataAdmin/Equipment/removeEquipment/'
   },
+  Connect: {
+    // 后加device id
+    connect: baseUrl + '/dataAdmin/Equipment/setEquipmentOnline/',
+    // 后加device id
+    disConnect: baseUrl + '/dataAdmin/Equipment/setEquipmentOffline/'
+  },
 
   RuleEngine:{
     addDataRule: baseUrl + '/ruleEngine/addDataRule',

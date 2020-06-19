@@ -20,6 +20,16 @@ export default new Vuex.Store({
     getList (state) {
       state.haveDeviceList = true
     },
+    reGetList (state) {
+      state.haveDeviceList = false
+      state.deviceList = []
+    },
+    removeDevice (state, deviceIndex) {
+      delete state.deviceList[deviceIndex]
+    },
+    freshDeviceList (state, deviceList) {
+      state.deviceList = deviceList
+    },
     dataRulePush (state, element){
       state.dataRuleList.push(element)
     },

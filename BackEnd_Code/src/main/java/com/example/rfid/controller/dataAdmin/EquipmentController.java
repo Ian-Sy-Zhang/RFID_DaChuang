@@ -15,7 +15,6 @@ public class EquipmentController {
 
     @PostMapping("/addEquipment")
     public ResponseVO addEquipment(@RequestBody EquipmentVO equipmentVO){
-        System.out.println(equipmentVO.toString());
         return equipmentService.addEquipment(equipmentVO);
     }
 
@@ -29,6 +28,16 @@ public class EquipmentController {
         return equipmentService.updateEquipment(equipmentVO);
     }
 
+    @GetMapping("/setEquipmentOnline/{id}")
+    public ResponseVO setEquipmentOnline(@PathVariable int id){
+        return equipmentService.setEquipmentOnline(id);
+    }
+
+    @GetMapping("/setEquipmentOffline/{id}")
+    public ResponseVO setEquipmentOffline(@PathVariable int id){
+        return equipmentService.setEquipmentOffline(id);
+    }
+
     @GetMapping("/searchOneEquipment/{id}")
     public ResponseVO searchOneEquipment(@PathVariable int id){
         return equipmentService.searchOneEquipment(id);
@@ -36,7 +45,6 @@ public class EquipmentController {
 
     @RequestMapping("/searchEquipmentList")
     public ResponseVO searchEquipmentList(){
-        System.out.println("123");
         return equipmentService.searchEquipmentList();
     }
 

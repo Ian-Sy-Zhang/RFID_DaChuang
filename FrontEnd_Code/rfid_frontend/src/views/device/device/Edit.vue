@@ -10,12 +10,6 @@
       <el-form-item label="设备型号" prop="model">
         <el-input v-model="device.model"></el-input>
       </el-form-item>
-      <el-form-item label="设备状态" style="text-align:left;" prop="status">
-        <el-radio-group v-model="device.status">
-          <el-radio label="online">在线</el-radio>
-          <el-radio label="offline">离线</el-radio>
-        </el-radio-group>
-      </el-form-item>
       <el-form-item label="连接类型" style="text-align:left;" prop="connection">
         <el-radio-group v-model="device.connection">
           <el-radio label="http">http</el-radio>
@@ -46,7 +40,7 @@ export default {
       labelPosition: 'right',
       device: {
         args: [{}],
-        status: 'online',
+        status: 'offline',
         connection: 'http'
       },
       rules: {
@@ -69,7 +63,6 @@ export default {
       this.$router.back()
     },
     saveDeviceInfo () {
-      console.log(this.device)
       const newDevice = {
         name: this.device.name,
         ip: this.device.pubNetAddr,
@@ -77,7 +70,17 @@ export default {
         status: this.device.status,
         connectionType: this.device.connection
       }
-      this.$http.post(this.$api.Device.addDevice, newDevice)
+      this.$http.post(this.$api.Device.addDevice, newDevice).then(res => {
+        this.$message({
+          type: 'success',
+          message: '新增成功!'
+        })
+        this.$store.commit('reGetList')
+        this.$router.push({ name: 'Device' })
+      })
+        .catch(err => {
+          console.log(err)
+        })
     },
     clearForm (form) {
       this.device.args = this.device.args.map(item => {

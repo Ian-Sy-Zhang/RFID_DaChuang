@@ -2,7 +2,7 @@ use rfid;
 
 create table chemCAS
 (
-  CAS_id int not null,
+  CAS_id INT UNSIGNED AUTO_INCREMENT,
   Name varchar(45) null,
   FusionPoint DOUBLE null,
   BoilingPoint double null,
@@ -18,7 +18,7 @@ create table chemCAS
 
 create table spot
 (
-  SpotId int not null,
+  SpotId INT UNSIGNED AUTO_INCREMENT,
   SpotName varchar(45) null,
   SpotX int null,
   SpotY int null,
@@ -28,7 +28,7 @@ create table spot
 
 create table batch
 (
-  batchId int not null,
+  batchId INT UNSIGNED AUTO_INCREMENT,
   batchName varchar(45) null,
   Destination int null,
   Departure int null,
@@ -38,7 +38,7 @@ create table batch
 
 create table transport
 (
-  TransportId int not null,
+  TransportId INT UNSIGNED AUTO_INCREMENT,
   CAS_id int null,
   batchId int null,
   Num int null,
@@ -50,7 +50,7 @@ create table transport
 
 create table equipment
 (
-  id int not null,
+  id INT UNSIGNED AUTO_INCREMENT,
   name varchar(45) null,
   ip varchar(45) null,
   abs varchar(45) null,

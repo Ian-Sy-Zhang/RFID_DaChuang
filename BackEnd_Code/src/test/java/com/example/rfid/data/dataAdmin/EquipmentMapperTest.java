@@ -28,7 +28,6 @@ public class EquipmentMapperTest {
     @Test
     public void addEquipment(){
         EquipmentVO equipmentVO = new EquipmentVO();
-        equipmentVO.setId(1);
         equipmentVO.setAbs("shdjkf");
         equipmentVO.setConnectionType("http");
         equipmentVO.setIp("172.168.1.1");
@@ -37,6 +36,11 @@ public class EquipmentMapperTest {
 
         int re = equipmentMapper.addEquipment(equipmentVO);
 
+    }
+
+    @Test
+    public void onoffLine(){
+        int re = equipmentMapper.setEquipmentOnline(1);
     }
 
     @Test

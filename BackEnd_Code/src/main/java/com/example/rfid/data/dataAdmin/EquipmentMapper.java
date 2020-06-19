@@ -16,6 +16,10 @@ public interface EquipmentMapper {
 
     int updateEquipment(@Param("equipmentVO") EquipmentVO equipmentVO);
 
+    int setEquipmentOnline(@Param("id") int id);
+
+    int setEquipmentOffline(@Param("id") int id);
+
     EquipmentVO searchEquipment(@Param("id") int id);
 
     ArrayList<EquipmentVO> searchEquipmentList();
