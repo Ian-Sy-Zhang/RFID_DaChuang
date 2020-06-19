@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Mapper
 public interface EquipmentMapper {
@@ -19,5 +20,5 @@ public interface EquipmentMapper {
 
     ArrayList<EquipmentVO> searchEquipmentList();
 
-
+    List<String> getEquipmentNameByIp(@Param("ip") String ip);
 }

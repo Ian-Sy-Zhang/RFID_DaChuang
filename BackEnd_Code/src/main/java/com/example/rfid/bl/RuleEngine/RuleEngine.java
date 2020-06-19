@@ -1,6 +1,7 @@
 package com.example.rfid.bl.RuleEngine;
 
-import com.example.rfid.vo.Rule;
+import com.example.rfid.vo.DataRule;
+import com.example.rfid.vo.EquipmentRule;
 import com.example.rfid.vo.TransportInfoVO;
 import org.springframework.stereotype.Service;
 
@@ -8,17 +9,29 @@ import java.util.List;
 
 @Service
 public interface RuleEngine {
-    List<Rule> getRules();
+    List<DataRule> getDataRules();
 
-    void addRule(String ruleName, String bean, String condition, String action);
+    List<EquipmentRule> getEquipmentRules();
 
-    void startRule(String ruleName);
+    void addDataRule(String ruleName, String sql, String condition, String action);
 
-    void modifyRule(String ruleName, String bean, String condition, String action);
+    void addEquipmentRule(String ruleName, String ip, String condition, String action);
 
-    void stopRule(String ruleName);
+    void startDataRule(String ruleName);
 
-    void removeRule(String ruleName);
+    void startEquipmentRule(String ruleName);
+
+    void modifyDataRule(String ruleName, String sql, String condition, String action);
+
+    void modifyEquipmentRule(String ruleName, String ip, String condition, String action);
+
+    void stopDataRule(String ruleName);
+
+    void stopEquipmentRule(String ruleName);
+
+    void removeDataRule(String ruleName);
+
+    void removeEquipmentRule(String ruleName);
 
     void fireRules(List<TransportInfoVO> transportInfos);
 

@@ -7,6 +7,8 @@ import com.example.rfid.vo.ResponseVO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class EquipmentServiceImpl implements EquipmentService {
@@ -54,6 +56,15 @@ public class EquipmentServiceImpl implements EquipmentService {
     public ResponseVO searchEquipmentList() {
         try {
             return ResponseVO.buildSuccess(equipmentMapper.searchEquipmentList());
+        }catch (Exception e){
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
+    @Override
+    public ResponseVO getEquipmentNameByIp(String ip) {
+        try {
+            return ResponseVO.buildSuccess(equipmentMapper.getEquipmentNameByIp(ip));
         }catch (Exception e){
             return ResponseVO.buildFailure("失败");
         }

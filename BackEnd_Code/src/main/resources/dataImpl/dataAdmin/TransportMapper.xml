@@ -4,6 +4,25 @@
 
     <insert id="addTransInfo">
         insert into transport (TransportId, CAS_id, batchId, Num, State)
-        values (#{transportVO.TransportId},#{transportVO.CAS_id},#{transportVO.batchId},#{transportVO.Num},#{transportVO.State})
+        values (#{transportVO.TransportId},#{transportVO.CAS_id},#{transportVO.batchId},#{transportVO.num},#{transportVO.State})
     </insert>
+
+    <delete id="removeTransport">
+        delete from transport where transport.TransportId = #{transportId}
+    </delete>
+
+    <update id="updateTransport">
+        update transport set
+        CAS_id = #{transportVO.CAS_id}, batchId = #{transportVO.batchId}, Num = #{transportVO.num}, State = #{transportVO.State}
+        where
+        transport.TransportId = #{transportVO.TransportId}
+    </update>
+
+    <select id="searchOneTransport" resultType="com.example.rfid.vo.TransportVO">
+      select * from transport where transport.TransportId = #{TransportId}
+    </select>
+
+    <select id="searchTransport" resultType="com.example.rfid.vo.TransportVO">
+      select * from transport
+    </select>
 </mapper>
